@@ -221,6 +221,9 @@
         .calendar-selected { padding: 14px 16px; border-radius: 18px; background: #fff6e9; border: 1px solid #f0d2ae; }
         .calendar-selected h3 { font-size: 15px; color: #6c397d; font-weight: 800; }
         .calendar-selected p { font-size: 12px; line-height: 1.7; margin-top: 6px; color: #80628c; }
+        .task-care-guide { margin: 4px 0 10px; color: #66367e; }
+        .task-care-guide summary { cursor: pointer; padding: 10px; font-size: 12px; font-weight: 700; min-height: 44px; }
+        .task-care-note { padding: 4px 10px; font-size: 12px; line-height: 1.65; }
         .task-hints { display: flex; flex-wrap: wrap; gap: 10px; padding: 7px 10px 10px 30px; }
         .task-hints a { font-size: 10px; color: #794595; text-decoration: underline; text-underline-offset: 3px; }
         .task-with-help { border-radius: 14px; background: #ffffff80; border: 1px solid #e4cfea; }
@@ -346,6 +349,101 @@
         }
         @media (max-width: 350px) { .mia-feature-card .mia-emotion { width: 56px; height: 56px; } .calendar-stats span { font-size: 10px; } .mia-feature-copy h3 { font-size: 15px; } .calendar-day-state { font-size: 8px; } }
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+
+        [hidden] { display: none !important; }
+        .beauty-level-button { flex-shrink: 0; background: #ffdf72; border: 2px solid #fff6cc; color: #54215e; border-radius: 18px; padding: 11px 14px; font-size: 12px; font-weight: 800; min-height: 44px; text-align: left; }
+        .beauty-level-button span { display: block; font-size: 10px; margin-top: 4px; }
+        .onboarding-toggle { display: block; margin-left: auto; min-height: 44px; font-size: 12px; font-weight: 700; padding: 8px 12px; background: #ffffff20; border-radius: 14px; }
+        .mia-onboarding { padding: 22px; background: linear-gradient(130deg,#fff0f7,#f0e5ff); border: 2px solid #e4c3ef; border-radius: 26px; display: grid; gap: 14px; color: #612a77; }
+        .onboarding-heading { display: flex; gap: 14px; align-items: center; }
+        .onboarding-heading h2 { font-size: 19px; font-weight: 800; }
+        .onboarding-heading p, #onboarding-progress { font-size: 12px; line-height: 1.6; }
+        .mia-onboarding .mia-card, .mia-onboarding .mia-feature-card { margin: 0; padding: 14px; box-shadow: none; background: #ffffffa6; border-radius: 18px; }
+        .calendar-grid-panel h4 { font-weight: 800; color: #6c3183; margin-bottom: 14px; }
+        #morning-checklist, #evening-checklist { position: relative; overflow: hidden; border-radius: 26px; padding: 22px; box-shadow: 0 8px 22px #633b7510; }
+        #morning-checklist { background: linear-gradient(145deg,#fff8cf,#ffe6c8 55%,#fff5e9); border-color: #f4c86d; }
+        #evening-checklist { background: linear-gradient(145deg,#eee7ff,#e0e6ff 55%,#f8efff); border-color: #b6abed; }
+        #morning-checklist > h3, #evening-checklist > h3 { font-size: 18px; margin-bottom: 5px; }
+        .checklist-mood { font-size: 12px; margin-bottom: 18px; color: #8d6637; }
+        #evening-checklist .checklist-mood { color: #6b598e; }
+        #morning-container label, #evening-container label { border-radius: 16px; border: 1px solid #fff; padding: 14px; box-shadow: 0 3px 8px #784c7010; }
+        #evening-container label { background: #ffffffcf; border-color: #d6cff5; }
+        #morning-container input { accent-color: #c78126; }
+        #evening-container input { accent-color: #8460ba; }
+        #morning-container label span, #evening-container label span { font-size: 14px; }
+        @media(max-width:640px) {
+            #welcome-info-box > div:first-child { flex-wrap: wrap; }
+            #welcome-info-box > div:first-child > .w-full { flex: 1; min-width: 0; }
+            #welcome-info-box .w-full > div:first-child { display: flex; flex-direction: row; align-items: center; flex-wrap: wrap; }
+            .beauty-level-button { margin-left: auto; font-size: 11px; padding: 8px 10px; }
+            .beauty-level-button span { font-size: 9px; }
+            .mia-onboarding { padding: 14px; }
+            .onboarding-heading h2 { font-size: 16px; }
+            #morning-checklist,#evening-checklist { padding: 18px 12px; }
+        }
+
+        #rec-modal-title { font-size: 22px; line-height: 1.35; color: #792987; }
+        #rec-modal-text { background: linear-gradient(145deg,#fff4fa,#f1ebff); color: #4f2666; font-size: 17px; line-height: 1.65; padding: 18px; }
+        #rec-modal-text .rec-intro { font-weight: 800; color: #a42f78; font-size: 19px; }
+        #rec-modal-text .age-level-notes { list-style: none; padding: 0; display: grid; gap: 12px; margin: 16px 0; }
+        #rec-modal-text .age-level-notes li { display: flex; gap: 12px; margin: 0; padding: 14px; background: #ffffffd9; border: 1px solid #eccdeb; border-radius: 18px; line-height: 1.6; }
+        #rec-modal-text .age-level-notes li > span:first-child { font-size: 25px; flex-shrink: 0; }
+        #rec-modal-text .age-level-pep { font-size: 16px; color: #833883; }
+        .rec-action { display: block; width: 100%; padding: 14px; min-height: 48px; margin-top: 14px; border-radius: 16px; background: linear-gradient(110deg,#df48a0,#8952d8); color: #fff; font-size: 16px; font-weight: 800; text-align: left; }
+        .rec-action-soft { background: #fff5d8; color: #744487; border: 1px solid #e5c4e8; }
+        .hair-frequency-panel { margin-top: 14px; padding: 14px; background: #fff; border: 2px solid #cba6ee; border-radius: 20px; }
+        .hair-frequency-panel h4 { font-size: 19px; font-weight: 800; color: #8839a1; margin-bottom: 10px; }
+        .hair-frequency-type { margin-top: 12px; padding: 12px; background: #f5efff; border: 1px solid #e8d9ef; border-radius: 15px; }
+        .hair-frequency-type h5 { font-weight: 800; margin-bottom: 6px; color: #803c8e; }
+        .hair-frequency-selected { background: #fff2d0; border: 2px solid #edba5b; }
+        .hair-frequency-note { margin-top: 14px; font-size: 15px; }
+        @media(max-width:640px) { #rec-modal-title { font-size: 20px; } #rec-modal-text { font-size: 16px; padding: 14px; } #rec-modal-text .age-level-notes li { padding: 12px; } .beauty-level-button { max-width: 190px; } }
+        .author-story { margin-top: 16px; }
+        .author-story summary { cursor: pointer; padding: 14px; min-height: 48px; border-radius: 16px; background: #fff; color: #79408b; font-size: 16px; font-weight: 800; }
+        .author-story p, .project-purpose p { font-size: 16px; line-height: 1.75; }
+        .project-purpose { padding: 16px; border-radius: 18px; background: #fff5fb; margin: 14px 0; }
+        .project-purpose h3 { font-size: 18px; color: #863c93; margin-bottom: 8px; }
+        .calendar-months { display: grid; gap: 24px; }
+        .calendar-month h5 { display: flex; justify-content: space-between; gap: 8px; font-size: 18px; font-weight: 800; color: #753386; text-transform: capitalize; margin: 12px 0; }
+        .calendar-month h5 span { font-size: 12px; background: #f1e3ff; padding: 6px 10px; border-radius: 12px; text-transform: none; }
+        .calendar-day-outside { opacity: .55; background: #f6f2f7; cursor: default; border-style: dashed; }
+        .season-task-tip { padding: 8px 12px; font-size: 12px; line-height: 1.6; color: #694077; }
+        .reward-how { padding: 18px; border: 1px solid #efc5df; border-radius: 20px; background: #fff9fd; }
+        .reward-how h4 { font-size: 16px; font-weight: 800; color: #8e3c87; margin-bottom: 14px; }
+        .reward-steps { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; list-style: none; }
+        .reward-steps li { padding: 12px; background: #f7eaff; border-radius: 16px; color: #693a7d; }
+        .reward-steps li > span { display: block; font-size: 28px; margin-bottom: 7px; }
+        .reward-steps b { display: block; font-size: 13px; }
+        .reward-steps p, .reward-money-note { font-size: 12px; line-height: 1.65; margin-top: 8px; }
+        .reward-money-note { padding: 10px; background: #fff3cd; border-radius: 12px; }
+        @media(max-width:480px) { .reward-steps { grid-template-columns: 1fr; } .reward-steps li { display: grid; grid-template-columns: 38px 1fr; column-gap: 8px; } .reward-steps li > span { grid-row: span 2; margin: 0; } .reward-steps p { margin-top: 3px; } }
+        .calendar-expand-button { display:flex; justify-content:space-between; align-items:center; gap:14px; width:100%; padding:14px; min-height:48px; border-radius:18px; background:linear-gradient(110deg,#ffe2f1,#e5d7ff); color:#74318a; font-size:17px; font-weight:800; text-align:left; }
+        .calendar-expand-button[aria-expanded=true] span { transform:rotate(180deg); }
+        .habit-start-note { padding:12px; border-radius:16px; background:#f1eaff; color:#673783; font-size:13px; line-height:1.7; }
+        #daily-praise-text { font-size:19px; font-weight:700; line-height:1.7; color:#923c95; }
+
+        .bag-quest-banner { display:flex; align-items:center; gap:18px; padding:18px; margin-bottom:18px; background:linear-gradient(130deg,#fff5d4,#ffe8f5,#ede3ff); border:2px solid white; border-radius:22px; color:#653478; }
+        .bag-quest-banner h4 { font-size:18px; font-weight:800; }
+        .bag-quest-banner p { font-size:13px; line-height:1.6; margin:8px 0; }
+        .bag-quest-art { width:90px; flex-shrink:0; }
+        .bag-items-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:16px 0; }
+        .bag-item { display:grid; justify-items:center; position:relative; cursor:pointer; border:2px solid #e6d1ef; border-radius:20px; padding:12px; background:#fff; color:#653478; }
+        .bag-item:has(input:checked) { background:#fff0d2; border-color:#cc7fac; box-shadow:0 0 0 2px #f8d5ea; }
+        .bag-item input { position:absolute; top:12px; left:12px; width:20px; height:20px; accent-color:#a34da3; }
+        .bag-item svg { width:100px; height:110px; }
+        .bag-item b { text-align:center; font-size:14px; }
+        .bag-item small { text-align:center; font-size:11px; margin-top:5px; }
+        .bag-age-select { display:block; width:100%; padding:14px; margin:12px 0; font-size:16px; border-radius:16px; border:2px solid #d5b4e9; background:#fff; color:#67387e; }
+        .bag-navigation { display:flex; gap:10px; margin-top:16px; }
+        .bag-navigation button { flex:1; padding:14px; min-height:48px; border-radius:16px; font-weight:800; }
+        .bag-result-card { padding:16px; margin:14px 0; border-radius:18px; background:#fff; border:1px solid #e2c6eb; }
+        .bag-result-card h4 { font-size:17px; font-weight:800; color:#873f93; margin-bottom:8px; }
+        .bag-result-card p, .bag-result-card li { font-size:15px; line-height:1.7; }
+        #bag-result-title { font-size:21px; color:#9b3c8e; font-weight:800; }
+        #bag-step-label { color:#8a5298; font-size:12px; font-weight:800; margin-bottom:12px; }
+        .bag-check-note { display:flex; align-items:start; gap:10px; padding:12px; background:#fff4d9; border-radius:14px; font-size:14px; line-height:1.6; margin-top:10px; }
+        .bag-check-note input { margin-top:5px; width:20px; height:20px; flex-shrink:0; }
+        @media(max-width:400px) { .bag-quest-banner { gap:10px; padding:14px; } .bag-quest-art { width:64px; } .bag-item { padding:10px 6px; } }
     </style>
 </head>
 <body class="bg-gradient-to-tr from-pink-100 via-purple-100 to-indigo-200 min-h-screen py-4 sm:py-8 px-3 sm:px-4 text-gray-800">
@@ -366,20 +464,11 @@
                     <div onclick="openSeasonModal()" class="flex items-center gap-2 bg-amber-400 text-purple-950 text-xs font-bold px-4 py-2 rounded-full shadow-lg cursor-pointer hover:bg-amber-300 transition-all border border-white/30">
                         <span id="current-season-icon">🌱</span>
                         <span>Сезон: <span id="current-season-name">Уверенный старт</span></span>
-                        <span class="text-[10px] opacity-75">(День <span id="season-day-counter">1</span>/28)</span>
+                        <span class="text-[10px] opacity-75">(День <span id="season-day-counter">1</span>/<span id="season-duration-counter">21</span>)</span>
                     </div>
                 </div>
 
-                <!-- КНОПКИ УПРАВЛЕНИЯ ПРОФИЛЕМ -->
-                <div id="show-welcome-box-btn" class="text-center flex flex-wrap justify-center gap-2">
-                    <button onclick="toggleWelcomeSetup()" class="text-[11px] sm:text-xs font-bold bg-white/20 hover:bg-white/30 text-white px-3.5 py-2 rounded-xl backdrop-blur-md border border-white/30 transition-all shadow-sm cursor-pointer">
-                        🌸 Сменить образ / имя
-                    </button>
-                    <button onclick="openAgeRecModal()" class="text-[11px] sm:text-xs font-bold bg-yellow-400/90 hover:bg-yellow-400 text-purple-950 px-3.5 py-2 rounded-xl backdrop-blur-md border border-white/30 transition-all shadow-sm cursor-pointer">
-                        🌟 Мой бьюти-уровень
-                    </button>
-                </div>
-
+                <button type="button" id="onboarding-toggle" class="onboarding-toggle" onclick="toggleOnboardingPanel()" aria-controls="mia-onboarding-panel" aria-expanded="true">⚙️ Настройки и помощь</button>
                 <!-- Приветствие (С Мией) -->
                 <div id="welcome-info-box" class="space-y-4 text-left">
                     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 bg-white/15 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-white/30 shadow-xl text-center sm:text-left">
@@ -391,50 +480,38 @@
                                 <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white">
                                     Привет, <span id="display-name" class="text-yellow-300 drop-shadow-sm">Красотка</span>! 💕
                                 </h1>
-                                <span id="display-age-badge" class="text-xs sm:text-sm font-extrabold bg-pink-500/60 text-white px-3.5 py-1.5 rounded-full border border-white/40 self-center sm:self-auto shadow-sm">
-                                    👑 Главная по сиянию
-                                </span>
+                                <button type="button" class="beauty-level-button" onclick="openAgeRecModal()" aria-haspopup="dialog" aria-controls="age-rec-modal">🌟 РЕКОМЕНДАЦИИ ДЛЯ ТЕБЯ<span id="display-age-badge"></span></button>
                             </div>
-                            <div id="display-custom-advice" class="text-xs sm:text-sm md:text-base text-pink-50 font-bold leading-relaxed bg-black/10 p-3.5 rounded-2xl border border-white/20">
-                                Загружаем твои персональные советы... ✨
-                            </div>
+                            <section class="mia-daily-card" aria-labelledby="mia-daily-title"><span class="mia-daily-symbol" aria-hidden="true">💌</span><div><h2 id="mia-daily-title">Напутствие Мии на сегодня</h2><p id="mia-daily-encouragement">Мия готовит для тебя тёплые слова...</p><span class="mia-daily-caption">Новый день — новое доброе напоминание 💜</span></div></section>
                         </div>
                     </div>
                     
-                    <section class="mia-daily-card" aria-labelledby="mia-daily-title"><span class="mia-daily-symbol" aria-hidden="true">💌</span><div><h2 id="mia-daily-title">Напутствие Мии на сегодня</h2><p id="mia-daily-encouragement">Мия готовит для тебя тёплые слова...</p><span class="mia-daily-caption">Новый день — новое доброе напоминание 💜</span></div></section>
 
-                    <div class="mia-card">
-                        <button type="button" id="mia-welcome-trigger" class="mia-welcome-trigger" onclick="openMiaWelcome()" aria-haspopup="dialog" aria-controls="mia-welcome-modal" aria-label="Познакомиться с Мией и открыть мини-квест">
-                            <img data-mia-image class="mia-portrait" alt="Мия — твоя бьюти-подружка" width="88" height="88">
-                        </button>
-                        <div class="space-y-1">
-                            <h2 class="text-lg sm:text-xl font-extrabold">Мия: знакомство + мини-квест 💜</h2>
-                            <p class="text-xs sm:text-sm leading-relaxed">Нажми на мой портрет — познакомимся и раскроем «Секрет сияния» ✨</p>
-                        </div>
-                    </div>
+
 
 
                 </div>
             </div>
         </header>
 
+<dialog id="bag-quest-modal" class="mia-help-dialog" aria-labelledby="bag-quest-title" onclick="if(event.target===this) closeBagQuest()"><div id="bag-quest-scroll" class="mia-help-content"><button type="button" class="mia-welcome-close" onclick="closeBagQuest()" aria-label="Закрыть разбор косметички" autofocus>✕</button><div class="mia-help-heading"><span class="mia-emotion mia-emotion-curious" role="img" aria-label="Мия помогает разобраться в косметичке"></span><h2 id="bag-quest-title">Разбираем косметичку 🧴</h2></div><p id="bag-step-label" aria-live="polite"></p><section id="bag-step-1"><h3>1. Сколько тебе лет?</h3><p>Подберём понятную базу для твоего возраста. Менять профиль не будем.</p><label for="bag-age">Твой возраст</label><select id="bag-age" class="bag-age-select"><option value="10-11">10–11 лет</option><option value="12-13">12–13 лет</option><option value="14-15">14–15 лет</option></select><p class="mia-tip">Позови взрослого и достань свои средства. Правильных и неправильных косметичек тут нет 💜</p><button type="button" class="mia-welcome-done" onclick="chooseBagAge()">Покажи картинки ✨</button></section><section id="bag-step-2" hidden><h3>2. Что у тебя уже есть?</h3><p>Отметь свои средства. Картинки — примеры: твои баночки могут выглядеть иначе. Можно ничего не выбирать.</p><div id="bag-items" class="bag-items-grid"></div><label class="bag-check-note"><input type="checkbox" id="bag-dates"><span>🔎 Я проверила со взрослым сроки годности и срок после открытия.</span></label><div class="bag-navigation"><button type="button" class="rec-action-soft" onclick="showBagStep(1)">← Возраст</button><button type="button" class="mia-welcome-done" onclick="finishBagQuest()">Мия, что достаточно? 💜</button></div></section><section id="bag-step-3" hidden><div id="bag-result" aria-live="polite"></div><button type="button" class="rec-action rec-action-soft" onclick="bagQuestAdvice('face')">🧴 Как пользоваться базой</button><button type="button" class="rec-action rec-action-soft" onclick="bagQuestAdvice('cosmeticdates')">🔎 Сроки годности: подсказка</button><div class="bag-navigation"><button type="button" class="rec-action-soft" onclick="showBagStep(2)">← Изменить выбор</button><button type="button" class="mia-welcome-done" onclick="closeBagQuest()">Моя база понятна 🌸</button></div></section></div></dialog>
         <dialog id="mobile-install-modal" class="mia-help-dialog" aria-labelledby="mobile-install-title" onclick="if(event.target === this) closeMobileInstall()"><div class="mia-help-content"><button type="button" class="mia-welcome-close" onclick="closeMobileInstall()" aria-label="Закрыть подсказку установки" autofocus>✕</button><div class="mia-help-heading"><span class="mia-emotion mia-emotion-playful" role="img" aria-label="Мия приветствует тебя"></span><div><h2 id="mobile-install-title">Сияй! на главном экране 📱</h2></div></div><p>Добавь ярлык, чтобы открывать свой уголок заботы одним нажатием.</p><div class="mobile-install-info"><h3>iPhone и iPad</h3><p>Открой сайт в Safari → нажми «Поделиться» → «На экран Домой» → «Добавить». Названия пунктов могут немного отличаться.</p></div><div class="mobile-install-info"><h3>Android</h3><p>Открой меню браузера ⋮ → «Установить приложение» или «Добавить на главный экран» → подтверди добавление.</p></div><p class="mia-tip">💜 Для отзывов и заявок нужен интернет. Чтобы читать советы без сети, сначала открой нужные разделы онлайн. Прогресс остаётся в этом браузере; при первом открытии из ярлыка проверь, перенёс ли браузер твои отметки.</p><button type="button" class="mia-welcome-done" onclick="closeMobileInstall()">Понятно, добавлю Мию! ✨</button></div></dialog>
         <dialog id="calendar-help-modal" class="mia-help-dialog" aria-labelledby="calendar-help-title" onclick="if(event.target === this) closeCalendarHelp()"><div class="mia-help-content"><button type="button" class="mia-welcome-close" onclick="closeCalendarHelp()" aria-label="Закрыть пояснение календаря" autofocus>✕</button><div class="mia-help-heading"><span class="mia-emotion mia-emotion-curious" role="img" aria-label="Мия объясняет привычки"></span><div><h2 id="calendar-help-title">Календарь — твоя память о заботе 💜</h2></div></div>
-        <p>Когда учишься новому, легко забыть, что уже получилось. Календарь показывает твои реальные шаги с первого до последнего дня сезона, помогает найти удобный ритм и увидеть, какие привычки постепенно становятся знакомыми.</p><ol class="guide-steps"><li><b>Выбери правильную дату.</b> На каждой клетке есть номер дня сезона и дата. Нажми на неё, чтобы увидеть именно её чек-листы. Будущие дни можно посмотреть заранее, но отмечать выполненное — только когда они наступили.</li><li><b>Утром отмечай сделанное.</b> Мягкое умывание, подходящий крем и защита перед улицей; бережное расчёсывание, если твоим волосам оно нужно; воду по потребности. Не надо пить строго натощак или терпеть дискомфорт ради галочки.</li><li><b>Вечером — свой спокойный ритуал.</b> Снять макияж и мягко умыться, бережно разобрать волосы, позаботиться о руках. В пункте про сон отмечай подготовку ко сну: спокойный вечер и привычное время. Это не обещание уже выспаться до того, как ночь началась.</li><li><b>Не знаешь как? Спроси Мию.</b> Под каждой задачей есть ссылка на пошаговую шпаргалку и нужный термин словаря. Первые процедуры и новые приборы пробуй со взрослым, а средства и покупки согласуй с родителями.</li><li><b>Смотри на числа правильно.</b> «Дней с отметками» означает хотя бы одну галочку. «Все 7 шагов» — полный чек-лист. «Дней впереди» — будущие даты после сегодняшней, а не количество долгов. Пропущенные дни не требуют удвоенного ухода.</li><li><b>Регулярность помогает практике.</b> Повторяя посильные действия в похожее время, ты лучше запоминаешь технику и реже забываешь о нужном уходе. Крем может помогать сухой коже, мягкое обращение уменьшает повреждение волос, а режим сна поддерживает самочувствие. Результат зависит и от средств, состояния здоровья, питания и особенностей кожи — календарь не гарантирует идеальную внешность за 28 дней.</li><li><b>Замечай комфорт, а не только галочки.</b> Стало легче соблюдать ритуал? Умывание больше не кажется загадкой? Волосы распутываются без боли? Это полезные результаты. При раздражении остановись и расскажи взрослому; не продолжай ради серии отметок.</li><li><b>Сохрани свою историю.</b> Недели с отметками попадают в копилку достижений. Календарь хранит появляющиеся сезоны в этом браузере. После 28 полных дней откроется итоговый квест; для него не нужно заполнить все клетки идеально.</li></ol><p class="mia-tip">💜 Начни с двух-трёх удобных действий. Пропустила день — просто вернись к привычкам. Забота о себе должна помогать тебе, а не добавлять тревогу.</p><button type="button" class="mia-welcome-done" onclick="closeCalendarHelp()">Понятно, буду замечать свои шаги ✨</button></div></dialog>
+        <p>Когда учишься новому, легко забыть, что уже получилось. Календарь показывает твои реальные шаги с первого до последнего дня сезона, помогает найти удобный ритм и увидеть, какие привычки постепенно становятся знакомыми.</p><ol class="guide-steps"><li><b>Выбери правильную дату.</b> На каждой клетке есть номер дня сезона и дата. Нажми на неё, чтобы увидеть именно её чек-листы. Будущие дни можно посмотреть заранее, но отмечать выполненное — только когда они наступили.</li><li><b>Утром отмечай сделанное.</b> Мягкое умывание, подходящий крем и защита перед улицей; бережное расчёсывание, если твоим волосам оно нужно; воду по потребности. Не надо пить строго натощак или терпеть дискомфорт ради галочки.</li><li><b>Вечером — свой спокойный ритуал.</b> Снять макияж и мягко умыться, бережно разобрать волосы, позаботиться о руках. В пункте про сон отмечай подготовку ко сну: спокойный вечер и привычное время. Это не обещание уже выспаться до того, как ночь началась.</li><li><b>Не знаешь как? Спроси Мию.</b> Под каждой задачей есть ссылка на пошаговую шпаргалку и нужный термин словаря. Первые процедуры и новые приборы пробуй со взрослым, а средства и покупки согласуй с родителями.</li><li><b>Смотри на числа правильно.</b> «Дней с отметками» означает хотя бы одну галочку. «Все 7 шагов» — полный чек-лист. «Дней впереди» — будущие даты после сегодняшней, а не количество долгов. Пропущенные дни не требуют удвоенного ухода.</li><li><b>Регулярность помогает практике.</b> Повторяя посильные действия в похожее время, ты лучше запоминаешь технику и реже забываешь о нужном уходе. Крем может помогать сухой коже, мягкое обращение уменьшает повреждение волос, а режим сна поддерживает самочувствие. Результат зависит и от средств, состояния здоровья, питания и особенностей кожи — календарь помогает практиковаться, но не обещает идеальную внешность к определённой дате.</li><li><b>Замечай комфорт, а не только галочки.</b> Стало легче соблюдать ритуал? Умывание больше не кажется загадкой? Волосы распутываются без боли? Это полезные результаты. При раздражении остановись и расскажи взрослому; не продолжай ради серии отметок.</li><li><b>Сохрани свою историю.</b> Недели с отметками попадают в копилку достижений. Календарь хранит появляющиеся сезоны в этом браузере. После первого этапа из 21 полного дня откроется итоговый квест; следующие сезоны длятся по 28 дней; для него не нужно заполнить все клетки идеально.</li></ol><p class="mia-tip">💜 Начни с двух-трёх удобных действий. Пропустила день — просто вернись к привычкам. Забота о себе должна помогать тебе, а не добавлять тревогу.</p><button type="button" class="mia-welcome-done" onclick="closeCalendarHelp()">Понятно, буду замечать свои шаги ✨</button></div></dialog>
         <dialog id="weekly-achievement-modal" class="mia-help-dialog" aria-labelledby="weekly-achievement-title" onclick="if(event.target === this) closeWeekAchievement()"><div class="mia-help-content"><button type="button" class="mia-welcome-close" onclick="closeWeekAchievement()" aria-label="Закрыть достижения недели" autofocus>✕</button><div class="mia-help-heading"><span class="mia-emotion mia-emotion-playful" role="img" aria-label="Мия радуется твоим достижениям"></span><div><h2 id="weekly-achievement-title">Моя неделя заботы</h2></div></div><p id="weekly-achievement-praise" class="final-praise"></p><div id="weekly-achievement-tasks"></div><button type="button" class="mia-welcome-done" onclick="closeWeekAchievement()">Продолжаю в своём темпе 💜</button></div></dialog>
 
         <dialog id="project-about-modal" class="mia-help-dialog" aria-labelledby="project-about-title" onclick="if(event.target === this) closeProjectAbout()">
             <div class="mia-help-content"><button type="button" class="mia-welcome-close" onclick="closeProjectAbout()" aria-label="Закрыть информацию о проекте" autofocus>✕</button><div class="mia-help-heading"><span class="mia-emotion mia-emotion-caring" role="img" aria-label="Мия тепло улыбается"></span><div><span class="mia-feature-tag">Забота вместо гонки за идеалом</span><h2 id="project-about-title">О проекте «Сияй!» 💜</h2></div></div>
             <p>«Сияй!» создан, чтобы девочкам 10–15 лет было проще познакомиться с уходом за собой: понять новые слова, попробовать маленькие привычки и научиться делать это бережно. Мия — дружелюбная героиня с заранее подготовленными подсказками.</p>
             <section class="author-message" aria-labelledby="author-message-title"><img data-author-image src="assets/author-da29a42740c3c716.png" alt="Марина Воронцова — автор проекта" width="128" height="128"><span class="mia-feature-tag">Слово от автора</span><h3 id="author-message-title">МАРИНА ВОРОНЦОВА</h3>
-            <p>Я Марина Воронцова, мама двоих дочерей. Мне самой знакомы вопросы, с которыми сталкиваются девочки и их мамы: как выбрать косметику, какой уход подойдёт, какие рекомендации заслуживают внимания и как разобраться в огромном количестве баночек, советов и бьюти-трендов.</p>
+            <details class="author-story"><summary>💌 Прочитать слово от автора</summary><div><p>Я Марина Воронцова, мама двоих дочерей. Мне самой знакомы вопросы, с которыми сталкиваются девочки и их мамы: как выбрать косметику, какой уход подойдёт, какие рекомендации заслуживают внимания и как разобраться в огромном количестве баночек, советов и бьюти-трендов.</p>
             <p>Идея «Сияй!» родилась из желания направить интерес девочек к косметике в бережное и понятное знакомство с бьюти-миром. Мне хочется, чтобы здесь они находили доступные объяснения, учились заботиться о себе, задавать вопросы и осознанно выбирать уход вместе со взрослыми.</p>
             <p>Для меня особенно важно, чтобы бьюти-привычки становились поводом для доброго общения. Вместе с мамой, сестрой или подружкой можно обсудить новый уход, устроить уютный вечер, поделиться опытом и поддержать друг друга. Такие маленькие моменты помогают чаще проводить время вместе и строить тёплые, позитивные отношения.</p>
-            <p>Я хочу, чтобы девочки чувствовали себя красивыми и ухоженными, а забота о себе приносила радость. Пусть «Сияй!» станет местом, где можно учиться в своём темпе, замечать свои достижения и быть на своей стороне 💜</p><p class="author-signature">С теплом, Марина Воронцова</p></section>
-            <div class="project-purpose"><h3>Для чего здесь галочки и квесты?</h3><p>Не чтобы оценивать внешность, а чтобы помнить о себе, разбираться в бытовых ситуациях и постепенно находить свой ритм. Отдых и пропущенный день не отменяют стараний.</p></div>
-            <div class="project-purpose"><h3>Взрослые — часть команды</h3><p>Первое знакомство с процедурами и приборами проще пройти вместе. Новые средства, покупки и награды обсуждаются с родителями: виртуальные монетки не оплачивают реальные расходы.</p></div>
-            <div class="project-purpose"><h3>Без обязательных покупок</h3><p>Для начала не нужен большой косметический набор. Подсказки не заменяют помощь врача при заболеваниях кожи или волос. Предложения брендов рассматриваются отдельно; возможное партнёрство должно быть обозначено явно.</p></div>
-            <p>В конце 28-дневного сезона можно пройти квест по жизненным ситуациям и увидеть, как применять новые навыки регулярно. Отметки и результаты сохраняются в этом браузере.</p><button type="button" class="mia-welcome-done" onclick="closeProjectAbout()">Понятно, я с вами! ✨</button></div>
+            <p>Я хочу, чтобы девочки чувствовали себя красивыми и ухоженными, а забота о себе приносила радость. Пусть «Сияй!» станет местом, где можно учиться в своём темпе, замечать свои достижения и быть на своей стороне 💜</p><p class="author-signature">С теплом, Марина Воронцова</p></div></details></section>
+            <div class="project-purpose"><h3>🌸 Зачем галочки и квесты?</h3><p>Галочки помогают вспомнить: «Сегодня я позаботилась о себе!» А квесты — понять, что ты уже умеешь. Пропустила день? Всё ок: отдохни и продолжай, когда будешь готова. Мия рядом 💜</p></div>
+            <div class="project-purpose"><h3>👩‍👧 Вместе легче и уютнее</h3><p>Позови маму, папу или другого взрослого: вместе проще выбрать уход и освоить новый прибор. Покупки и награды сначала обсудите с родителями. Монетки здесь игровые — билеты, кафе и косметику они не оплачивают.</p></div>
+            <div class="project-purpose"><h3>🧴 Начни с того, что уже есть</h3><p>Большая полка баночек не нужна! Разберите со взрослым твой уход и выберите простые шаги. Если кожа или волосы беспокоят, расскажи взрослому — врач поможет разобраться. Советы Мии не заменяют врача.</p><p>🤝 Если появятся советы от бренда или реклама, мы прямо это подпишем. Покупать что-то ради галочки не нужно.</p></div>
+            <p>После первого этапа из 21 дня тебя ждёт квест: попробуешь решить знакомые бьюти-ситуации и заметишь, сколькому научилась ✨ Твои отметки и результаты хранятся в этом браузере.</p><button type="button" class="mia-welcome-done" onclick="closeProjectAbout()">Понятно, я с вами! ✨</button></div>
         </dialog>
 
         <dialog id="project-request-modal" class="mia-help-dialog" aria-labelledby="project-request-title" onclick="if(event.target === this) closeProjectRequest()">
@@ -458,7 +535,7 @@
         </dialog>
 
         <dialog id="final-quest-modal" class="mia-help-dialog" aria-labelledby="final-quest-title" onclick="if(event.target === this) closeFinalQuest()">
-            <div class="mia-help-content"><button type="button" class="mia-welcome-close" onclick="closeFinalQuest()" aria-label="Закрыть итоговый квест" autofocus>✕</button><div class="mia-help-heading"><span class="mia-emotion mia-emotion-playful" role="img" aria-label="Мия радуется твоим успехам"></span><div><span class="mia-feature-tag">Твои навыки в обычной жизни</span><h2 id="final-quest-title">28 дней — и новый опыт 🌟</h2></div></div>
+            <div class="mia-help-content"><button type="button" class="mia-welcome-close" onclick="closeFinalQuest()" aria-label="Закрыть итоговый квест" autofocus>✕</button><div class="mia-help-heading"><span class="mia-emotion mia-emotion-playful" role="img" aria-label="Мия радуется твоим успехам"></span><div><span class="mia-feature-tag">Твои навыки в обычной жизни</span><h2 id="final-quest-title">Твой этап — и новый опыт 🌟</h2></div></div>
             <div id="final-quest-question-view"><p>Это не экзамен. Выбирай подходящий вариант, читай объяснение и пробуй снова, если нужно. Мия поможет разобраться 💜</p><p id="final-quest-step" class="mia-feature-tag"></p><h3 id="final-quest-question" class="final-question-title"></h3><div id="final-quest-options" class="final-options"></div><p id="final-quest-feedback" class="mia-tip" role="status" aria-live="polite"></p><button type="button" id="final-quest-next" class="mia-welcome-done" onclick="nextFinalQuestQuestion()" disabled>Дальше с Мией →</button></div>
             <div id="final-quest-result-view" hidden><p id="final-quest-praise" class="final-praise"></p><h3 class="project-dialog-title">Мои новые навыки и привычки</h3><ul id="final-quest-achievements" class="final-achievements"></ul><p id="final-quest-revisit" class="mia-tip"></p><p>Выбери две-три привычки для своей недели. Продолжай применять их спокойно, по потребности, и осваивай новые процедуры со взрослым — тебе не нужно делать всё сразу.</p><div class="mia-social-actions"><button type="button" onclick="restartFinalQuest()">Повторить ситуации ✨</button></div><button type="button" class="mia-welcome-done" onclick="closeFinalQuest()">Забираю навыки в свою жизнь! 💜</button></div></div>
         </dialog>
@@ -482,11 +559,11 @@
                 <div class="mia-help-heading"><span class="mia-emotion mia-emotion-playful" role="img" aria-label="Мия радостно объясняет правила"></span><div><span class="mia-feature-tag">Пять шагов — и ты в теме</span><h2 id="mia-guide-title">Как тут чилить? 🚀</h2></div></div>
                 <p>Это твой уголок заботы, а не контрольная. Вот короткий маршрут — дальше двигайся в своём темпе 💜</p>
                 <ol class="guide-steps">
-                    <li><b>Выбери день.</b> Нажми на одну из 28 дат сезона в календаре. У каждого дня свои отметки; полоска показывает прогресс именно выбранного дня.</li>
+                    <li><b>Выбери день.</b> Открой календарь и нажми на дату сезона в календаре. У каждого дня свои отметки; полоска показывает прогресс именно выбранного дня.</li>
                     <li><b>Сделала — поставь галочку.</b> Утром — мягкое умывание и привычные дела. Вечером — смыть день, позаботиться о ручках и настроиться на сон. Не знаешь процедуру? Открой мою шпаргалку; первый раз попробуй со взрослым.</li>
                     <li><b>Копи монетки заботы.</b> За каждую отмеченную задачу получаешь +2. Сняла галочку — эти монетки вычитаются. При сбросе дня пересчитываются монеты и задачи сезона; баланс не уходит ниже нуля.</li>
                     <li><b>Выбирай время вместе.</b> Монетки открывают идею награды, а не оплачивают кино или кафе. Заранее договорись с родителями о планах, разрешении и бюджете. Есть и варианты без расходов!</li>
-                    <li><b>Расти без гонки.</b> Сезон длится 28 полных дней. Потом в его окне появится переход на следующий уровень. Пропущенная галочка не отменяет твоих стараний — отдыхать тоже нормально 😌</li>
+                    <li><b>Расти без гонки.</b> Первый этап длится 21 полный день, следующие — по 28 дней. Потом в его окне появится переход на следующий уровень. Пропущенная галочка не отменяет твоих стараний — отдыхать тоже нормально 😌</li>
                 </ol>
                 <p class="mia-tip">💜 Отметки сохраняются в этом браузере. На другом устройстве они автоматически не появятся; очистка данных браузера может удалить прогресс.</p>
                 <button type="button" class="mia-welcome-done" onclick="closeMiaHelp('guide')">Теперь я в теме! ✨</button>
@@ -608,7 +685,7 @@
 
                         <div class="space-y-1">
                             <h2 class="text-xl sm:text-2xl font-extrabold text-purple-950 tracking-tight">✨ Диплом Сияния ✨</h2>
-                            <p class="text-[11px] text-purple-800 font-bold uppercase tracking-wider">Итоги 28 дней сезона</p>
+                            <p class="text-[11px] text-purple-800 font-bold uppercase tracking-wider">Итоги твоего сезона</p>
                         </div>
 
                         <div class="py-2.5 px-3 bg-white/85 backdrop-blur-sm rounded-2xl border border-amber-200 space-y-1.5 max-w-sm mx-auto shadow-sm">
@@ -620,7 +697,7 @@
                 </div>
 
                 <div id="diploma-locked-msg" class="bg-amber-50 p-3.5 rounded-2xl border border-amber-200 text-xs text-amber-900 text-center font-bold">
-                    🔒 Официальный Диплом Сияния откроется автоматически по итогам завершения полных 28 дней месяца! Ты на верном пути! ✨
+                    🔒 Официальный Диплом Сияния откроется автоматически по итогам завершения всех дней сезона! Ты на верном пути! ✨
                 </div>
 
                 <button type="button" id="season-knowledge-btn" onclick="openFinalQuest()" class="hidden w-full py-3 bg-purple-100 text-purple-950 font-extrabold text-xs rounded-xl">🌟 Проверить новые навыки с Мией</button>
@@ -743,7 +820,7 @@
         <div id="age-rec-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-3 hidden">
             <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border-4 border-purple-300 space-y-4 relative max-h-[90vh] overflow-y-auto">
                 <button onclick="closeAgeRecModal()" class="absolute top-4 right-4 w-8 h-8 bg-purple-100 text-purple-900 rounded-full font-bold cursor-pointer">✕</button>
-                <div class="text-center space-y-1"><span class="text-3xl" id="rec-modal-emoji">🌸</span><h3 class="text-base font-extrabold text-purple-950" id="rec-modal-title">Твой бьюти-уровень</h3></div>
+                <div class="text-center space-y-1"><span class="text-3xl" id="rec-modal-emoji">🌸</span><h3 class="text-base font-extrabold text-purple-950" id="rec-modal-title">Рекомендации для тебя</h3></div>
                 <div class="bg-purple-50 p-4 rounded-2xl text-xs text-gray-800" id="rec-modal-text"></div>
                 <button onclick="closeAgeRecModal()" class="w-full py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-xl text-xs font-bold cursor-pointer">Ок, выбираю свой темп! 💜</button>
             </div>
@@ -775,7 +852,7 @@
                 <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-4 rounded-2xl shadow-sm border border-amber-200 space-y-2">
                     <div class="flex justify-between items-center text-xs">
                         <span class="font-bold text-amber-900">📅 Сезон: <span id="month-progress-text" class="text-amber-700 font-extrabold">0%</span></span>
-                        <span class="text-[10px] px-2 py-0.5 bg-amber-400 text-purple-950 rounded-full font-bold" id="month-days-left">28 дней</span>
+                        <span class="text-[10px] px-2 py-0.5 bg-amber-400 text-purple-950 rounded-full font-bold" id="month-days-left">21 день</span>
                     </div>
                     <div class="w-full bg-white h-3 rounded-full overflow-hidden p-0.5 border border-amber-100">
                         <div id="month-progress-bar" class="bg-gradient-to-r from-amber-400 to-orange-500 h-full w-0 transition-all duration-500 rounded-full"></div>
@@ -783,7 +860,18 @@
                 </div>
             </div>
 
-            <!-- НАСТРОЙКИ (ПОСТОЯННЫЙ БЛОК ГРАФИКА МЫТЬЯ) -->
+            <section id="mia-onboarding-panel" class="mia-onboarding" aria-labelledby="mia-onboarding-title">
+                <div class="onboarding-heading"><span class="mia-emotion mia-emotion-playful" role="img" aria-label="Мия рада знакомству"></span><div><h2 id="mia-onboarding-title">Знакомство и твоя бьюти-база 💜</h2><p>Выбери имя, образ и уход. Мия покажет остальное.</p></div></div>
+                <button type="button" id="show-welcome-box-btn" class="mia-feature-action" onclick="toggleWelcomeSetup()">🌸 Сменить образ / имя</button>
+                    <div class="mia-card">
+                        <button type="button" id="mia-welcome-trigger" class="mia-welcome-trigger" onclick="openMiaWelcome()" aria-haspopup="dialog" aria-controls="mia-welcome-modal" aria-label="Познакомиться с Мией и открыть мини-квест">
+                            <img data-mia-image class="mia-portrait" alt="Мия — твоя бьюти-подружка" width="88" height="88">
+                        </button>
+                        <div class="space-y-1">
+                            <h2 class="text-lg sm:text-xl font-extrabold">Мия: знакомство + мини-квест 💜</h2>
+                            <p class="text-xs sm:text-sm leading-relaxed">Нажми на мой портрет — познакомимся и раскроем «Секрет сияния» ✨</p>
+                        </div>
+                    </div>            <!-- НАСТРОЙКИ (ПОСТОЯННЫЙ БЛОК ГРАФИКА МЫТЬЯ) -->
             <section id="setup-section" class="mia-feature-card mia-feature-setup">
                 <button type="button" class="mia-emotion-button" onclick="openMiaHelp('setup')" aria-haspopup="dialog" aria-controls="mia-setup-modal" aria-label="Мия поможет настроить уход">
                     <span class="mia-emotion mia-emotion-curious" role="img" aria-label="Мия задумчиво улыбается"></span>
@@ -798,22 +886,28 @@
                 <div class="mia-feature-copy"><span class="mia-feature-tag">Без сложных правил</span><h3>📖 Как тут вообще чилить?</h3><p>Галочки, монетки и награды — покажу, как всё устроено. Спойлер: идеальной быть не нужно 😌</p><button type="button" class="mia-feature-action" onclick="openMiaHelp('guide')" aria-haspopup="dialog" aria-controls="mia-guide-modal">Мия, покажи! 🚀</button></div>
             </section>
 
+                <p id="onboarding-progress" role="status" aria-live="polite"></p>
+                <button type="button" class="mia-welcome-done" onclick="finishOnboarding()">Готово, к привычкам ✨</button>
+            </section>
             <!-- Вкладки дней недели -->
-                        <section id="season-calendar-section" class="season-calendar" aria-labelledby="calendar-title"><div class="mia-useful-heading"><span class="mia-emotion mia-emotion-playful" role="img" aria-label="Мия помогает замечать твои привычки"></span><div><h3 id="calendar-title">📅 Мой календарь бьюти-привычек</h3><p>Весь сезон: с первого до 28-го дня. Выбери дату — ниже откроются её утренние и вечерние шаги.</p></div></div><label for="calendar-season-select" class="calendar-select-label">Сезон и его даты</label><select id="calendar-season-select" onchange="selectCalendarSeason(this.value)"></select><p id="calendar-range"></p><div class="calendar-stats"><div><b id="calendar-filled-days">0 / 28</b><span>Дней с отметками</span></div><div><b id="calendar-full-days">0</b><span>Все 7 шагов отмечены</span></div><div><b id="calendar-days-ahead">27</b><span>Дней впереди, после сегодня</span></div></div><button type="button" class="mia-feature-action" onclick="openCalendarHelp()" aria-haspopup="dialog" aria-controls="calendar-help-modal">Мия, зачем вести календарь? 💜</button><div class="calendar-weekdays" aria-hidden="true"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div><div id="days-tabs" class="season-calendar-grid"></div><p class="calendar-legend">🌸 Часть шагов · 💜 Все шаги · ○ Без отметок · Серые даты — впереди</p><p class="mia-choice-note">Календарь помогает замечать усилия. Все семь галочек не обязательны каждый день. История сезонов сохраняется с момента появления календаря.</p></section><div class="calendar-selected"><h3 id="calendar-selected-date"></h3><p id="calendar-day-note"></p></div>
+                        <section id="season-calendar-section" class="season-calendar" aria-labelledby="calendar-title"><div class="mia-useful-heading"><span class="mia-emotion mia-emotion-playful" role="img" aria-label="Мия помогает замечать твои привычки"></span><div><h3 id="calendar-title">📅 Мой календарь бьюти-привычек</h3><p>Первый шаг — 21 день заботы. Следующие сезоны — по 28 дней. Отмечай шаги утром и вечером. Календарь ниже — нажми дату, чтобы открыть её чек-листы.</p></div></div><label for="calendar-season-select" class="calendar-select-label">Сезон и его даты</label><select id="calendar-season-select" onchange="selectCalendarSeason(this.value)"></select><p id="calendar-range"></p><p class="habit-start-note">🌱 Начнём с 21 дня — это посильный этап, чтобы попробовать заботу о себе. Привычки растут в своём темпе: иногда нужно больше времени. Продолжай маленькими шагами, без обязательной идеальной серии 💜</p><div class="calendar-stats"><div><b id="calendar-filled-days">0 / 21</b><span>Дней с отметками</span></div><div><b id="calendar-full-days">0</b><span>Все 7 шагов отмечены</span></div><div><b id="calendar-days-ahead">20</b><span>Дней впереди, после сегодня</span></div></div><button type="button" class="mia-feature-action" onclick="openCalendarHelp()" aria-haspopup="dialog" aria-controls="calendar-help-modal">Мия, зачем вести календарь? 💜</button></section><div class="calendar-selected"><h3 id="calendar-selected-date"></h3><p id="calendar-day-note"></p></div>
 
 
             <!-- Чек-листы -->
             <div class="checklist-period-switch" aria-label="Время дня"><button type="button" id="period-morning" aria-controls="morning-checklist" aria-pressed="true" onclick="setChecklistPeriod('morning')">☀️ Утро</button><button type="button" id="period-evening" aria-controls="evening-checklist" aria-pressed="false" onclick="setChecklistPeriod('evening')">🌙 Вечер</button></div>
             <div id="daily-checklists" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div id="morning-checklist" class="bg-amber-50/50 p-4 rounded-2xl border-2 border-amber-200">
-                    <h3 class="font-bold text-amber-900 text-xs mb-3">☀️ Утренний чек-лист</h3>
+                    <h3 class="font-bold text-amber-900 text-xs mb-3">☀️ Утренний чек-лист</h3><p class="checklist-mood">Мягкий старт нового дня 🌼</p>
                     <div id="morning-container" class="space-y-2"></div>
                 </div>
                 <div id="evening-checklist" class="bg-indigo-50/50 p-4 rounded-2xl border-2 border-indigo-200">
-                    <h3 class="font-bold text-indigo-900 text-xs mb-3">🌙 Вечерний чек-лист</h3>
+                    <h3 class="font-bold text-indigo-900 text-xs mb-3">🌙 Вечерний чек-лист</h3><p class="checklist-mood">Снимаем суету, включаем заботу ✨</p>
                     <div id="evening-container" class="space-y-2"></div>
                 </div>
             </div>
+
+            <dialog id="daily-praise-modal" class="mia-help-dialog" aria-labelledby="daily-praise-title" onclick="if(event.target===this) closeDailyPraise()"><div class="mia-help-content"><button type="button" class="mia-welcome-close" onclick="closeDailyPraise()" aria-label="Закрыть поздравление" autofocus>✕</button><div class="mia-help-heading"><span class="mia-emotion mia-emotion-playful" role="img" aria-label="Мия радуется твоим шагам"></span><div><h2 id="daily-praise-title">Твой день заботы отмечен! 💜</h2><p id="daily-praise-date"></p></div></div><p id="daily-praise-text"></p><p class="mia-choice-note">Не каждый день нужны все галочки. Даже один посильный шаг — забота о себе.</p><button type="button" class="mia-welcome-done" onclick="closeDailyPraise()">Спасибо, Мия! 🌸</button></div></dialog>
+            <div id="calendar-grid-panel" class="season-calendar calendar-grid-panel"><button type="button" id="calendar-expand-button" class="calendar-expand-button" onclick="toggleCalendarMonths()" aria-expanded="false" aria-controls="calendar-months-content">Твои месяцы заботы 📅 <span aria-hidden="true">▾</span></button><p class="mia-choice-note">Нажми, чтобы посмотреть все даты и свои отметки.</p><div id="calendar-months-content" hidden><p class="mia-choice-note">В каждом месяце — все его даты. Цветом выделены дни выбранного сезона; остальные даты показаны для ориентира.</p><div id="days-tabs" class="calendar-months"></div><p class="calendar-legend">🌸 Часть шагов · 💜 Все шаги · ○ Без отметок · Серые даты — впереди</p><p class="mia-choice-note">Календарь помогает замечать усилия. Все семь галочек не обязательны каждый день. История сезонов сохраняется с момента появления календаря.</p></div></div>
 
             <!-- РЕАЛЬНЫЕ НАГРАДЫ ВМЕСТЕ С БЛИЗКИМИ -->
             <div class="bg-gradient-to-r from-pink-200 via-purple-200 to-rose-200 p-4 sm:p-6 rounded-2xl border-2 border-pink-300 shadow-md space-y-3.5">
@@ -821,13 +915,10 @@
                     <h3 class="font-bold text-pink-950 flex items-center gap-2 text-sm sm:text-base">
                         <span>👩‍👧‍👦</span> Реальные награды вместе с мамой, сестрой или подругой
                     </h3>
-                    <span class="text-[10px] text-pink-900 font-bold bg-white/70 px-3 py-1 rounded-full self-start sm:self-auto">Жми «Выбрать» за советы!</span>
+                    <span class="text-[10px] text-pink-900 font-bold bg-white/70 px-3 py-1 rounded-full self-start sm:self-auto">💡 «Выбрать» → идея от Мии</span>
                 </div>
 
-                <div class="bg-white/95 p-3.5 rounded-xl border border-pink-200 text-xs text-gray-800 space-y-1 shadow-sm">
-                    <div class="font-bold text-pink-950 flex items-center gap-1 text-xs">💡 Как тут лутать призы?</div>
-                    <p class="text-[11px] sm:text-xs leading-relaxed">Отмечай привычки, копи <b>монетки заботы</b> и выбирай идею для классного времени вместе 💖 Перед выбором договорись с родителями: награду можно устроить со взрослым или с их одобрения. Билеты, кафе и покупки часто требуют родительского бюджета — заранее обсудите сумму и возможность оплаты. <b>Монетки виртуальные: они открывают подсказку, а не оплачивают награду.</b> У Мии есть и варианты без дополнительных расходов!</p>
-                </div>
+                <section class="reward-how" aria-label="Как выбрать награду"><h4>💖 Забота → монетки → время вместе</h4><ol class="reward-steps"><li><span aria-hidden="true">✅</span><b>Отмечай привычки</b><p>За шаги — монетки заботы.</p></li><li><span aria-hidden="true">🪙</span><b>Выбери идею</b><p>Мия подскажет, как её устроить.</p></li><li><span aria-hidden="true">👩‍👧</span><b>Договорись со взрослыми</b><p>Вместе или с их одобрения.</p></li></ol><p class="reward-money-note">💸 Монетки игровые: они открывают совет, а не оплачивают покупки. Бюджет обсуди с родителями. 🌸 Есть идеи без расходов!</p></section>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs" id="rewards-grid"></div>
                 <section class="sticker-shop-section" aria-labelledby="sticker-shop-title"><h4 id="sticker-shop-title">💌 Стикеры поддержки от Мии</h4><p>Выбери фразу, которая нужна тебе сегодня. Стикер стоит <b>6 виртуальных монет заботы</b> и остаётся в твоей копилке. Настоящие деньги не нужны. Один и тот же стикер покупается один раз.</p><div id="sticker-shop" class="sticker-shop-grid"></div><p id="sticker-purchase-status" role="status" aria-live="polite"></p></section>
@@ -850,6 +941,7 @@
 
             <section class="mia-useful-section" aria-labelledby="mia-useful-title">
                 <div class="mia-useful-heading"><span class="mia-emotion mia-emotion-caring" role="img" aria-label="Мия поддерживающе улыбается"></span><div><h3 id="mia-useful-title">💜 Полезные советы от Мии</h3><p>Почему так, а не иначе? Разбираемся без страшилок, стыда и гонки за идеалом.</p></div></div>
+                <section class="bag-quest-banner"><svg class="bag-quest-art" viewBox="0 0 110 110" aria-hidden="true"><path d="M34 32 C34 9 76 9 76 32" fill="none" stroke="#875393" stroke-width="7"/><rect x="12" y="29" width="86" height="66" rx="20" fill="#f1adc9" stroke="#cf80b4" stroke-width="3"/><path d="M15 48 H95" stroke="#fff0f6" stroke-width="5"/><text x="55" y="79" text-anchor="middle" font-size="29" fill="white">♡</text></svg><div><h4>🧴 Мини-квест: что в косметичке?</h4><p>Отметь свои баночки на картинках. Мия подскажет, чего достаточно для твоего возраста.</p><button type="button" class="mia-feature-action" onclick="openBagQuest()" aria-haspopup="dialog" aria-controls="bag-quest-modal">Разобрать с Мией 💜</button></div></section>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="mia-useful-cards"></div>
             </section>
 
@@ -894,13 +986,14 @@
             document.getElementById('period-evening').setAttribute('aria-pressed', String(period === 'evening'));
         }
         function navigateMobileSection(section) {
-            const targets = {today:'calendar-selected-date',calendar:'season-calendar-section',mia:'mia-advice-section',achievements:'achievement-title'};
+            const targets = {today:'calendar-selected-date',calendar:'calendar-grid-panel',mia:'mia-advice-section',achievements:'achievement-title'};
             if (!targets[section]) return;
             if (section === 'today') {
                 calendarSelectedSeason = seasonStartDate;
                 localStorage.setItem('calendarSelectedSeason', calendarSelectedSeason);
                 switchDay(calendarTodayKey());
             }
+            if (section === 'calendar') setCalendarMonthsExpanded(true);
             document.querySelectorAll('[data-mobile-section]').forEach(button => {
                 const selected = button.dataset.mobileSection === section;
                 button.setAttribute('aria-pressed', String(selected));
@@ -1036,41 +1129,39 @@
         const miaAgeLevels = {
     "10-11": {
         "icon": "🌱",
-        "title": "Первый бьюти-старт · 10–11 лет",
-        "intro": "Привет, исследовательница! Давай знакомиться с уходом спокойно: никаких марафонов из десяти баночек — начнём с понятных вещей.",
+        "title": "Первые шаги · 10–11 лет",
+        "intro": "Учимся заботиться о себе.",
         "notes": [
-            "Мягкое умывание, подходящий крем и защита от солнца перед улицей — средства подбирай со взрослым.",
-            "Расчёсывайся без боли и береги ручки. Если что-то щиплет или непонятно — можно сразу спросить.",
-            "Новые процедуры и приборы пробуй вместе со взрослым. Косметику покупать не обязательно.",
-            "Для сна обычно нужно 9–12 часов. Вместе с родителями найдите удобный вечерний ритуал."
+            "Умывайся мягко. Крем и SPF выбирай со взрослым.",
+            "Распутывай волосы без боли, увлажняй руки.",
+            "Новые средства и приборы пробуй со взрослым. Спи 9–12 часов."
         ],
-        "pep": "Твоя задача сейчас — любопытство и бережность, а не идеальность. Один освоенный шаг уже круто 💜"
+        "pep": "Начни с малого. Я рядом 💜"
     },
     "12-13": {
         "icon": "🎧",
-        "title": "Нахожу свой бьюти-вайб · 12–13 лет",
-        "intro": "Хочется всё попробовать? Понимаю! Давай узнавать, что подходит именно тебе, и оставлять в уходе понятные, комфортные вещи.",
+        "title": "Своя база · 12–13 лет",
+        "intro": "Ищем уход, в котором тебе комфортно.",
         "notes": [
-            "Замечай ощущения кожи: сухость, блеск, раздражение. Выбирай мягкий уход со взрослым, а не по чужому списку.",
-            "Знакомься с новыми средствами по одному. Высыпания не означают, что нужно тереть лицо сильнее; при стойких проблемах помогает врач.",
-            "Распутывай волосы с кончиков, мой голову по потребности кожи головы. Первое использование фена и горячих приборов — только рядом со взрослым.",
-            "В 12 лет обычно нужно 9–12 часов сна, в 13 — 8–10. Давай подбирать ритм под твою школу и самочувствие."
+            "База: умывание, крем, SPF. Новые средства — по одному, со взрослым.",
+            "Мой голову по загрязнению. Горячие приборы впервые — со взрослым.",
+            "Сон: в 12 лет — 9–12 часов, в 13 — 8–10."
         ],
-        "pep": "Твой вайб — это то, в чём тебе комфортно. Можно пробовать, задавать вопросы и передумывать ✨"
+        "pep": "Не подходит? Остановись и спроси. Это нормально 💜"
     },
     "14-15": {
         "icon": "✨",
-        "title": "Мой уход, мой ритм · 14–15 лет",
-        "intro": "Ты уже можешь разбираться в своём уходе всё увереннее. Здесь мы выбираем осознанно, экспериментируем бережно и не гоняемся за картинкой из ленты.",
+        "title": "Мой ритм · 14–15 лет",
+        "intro": "Выбираем подходящее, без лишних баночек.",
         "notes": [
-            "Держи базу: мягкое очищение, увлажнение по потребности и подходящий SPF перед улицей. Больше средств не всегда удобнее.",
-            "Макияж — по желанию. Проверяй сроки, не делись тушью и снимай косметику вечером чистыми инструментами.",
-            "При укладке соблюдай инструкцию. Первое знакомство с новым горячим прибором осваивай со взрослым, покупки и расходы согласуйте заранее.",
-            "Обычно нужно 8–10 часов сна. Регулярный отдых поддерживает самочувствие, но не заменяет медицинскую помощь при проблемах кожи или волос."
+            "Умывание, увлажнение, SPF — твоя база.",
+            "Макияж — по желанию. Снимай вечером и не делись тушью.",
+            "Спи 8–10 часов. Покупки и новые приборы согласуй со взрослым."
         ],
-        "pep": "Уметь выбрать подходящее и отказаться от неудобного — тоже бьюти-навык. Я на твоей стороне 💜"
+        "pep": "Твой комфорт важнее трендов 💜"
     }
 };
+
         let encouragementTimer = null;
         let encouragementVisibilityRegistered = false;
         function getDailyEncouragement(date = new Date()) {
@@ -1079,7 +1170,6 @@
         }
         function renderDailyEncouragement() {
             document.getElementById('mia-daily-encouragement').innerText = getDailyEncouragement();
-            document.getElementById('display-custom-advice').innerText = getMiaWhisper();
         }
         function startDailyEncouragement() {
             renderDailyEncouragement();
@@ -1095,8 +1185,14 @@
         let calendarSelectedSeason = localStorage.getItem('calendarSelectedSeason') || null;
         function calendarTodayKey() { return achievementDateKey(new Date()); }
         function rememberCurrentCalendarSeason() {
+            let changed = false;
+            seasonCalendarHistory.forEach(record => {
+                if (!record.duration) { record.duration = record.start === seasonStartDate ? getSeasonDuration() : 28; changed = true; }
+                if (record.start === seasonStartDate && record.duration !== getSeasonDuration()) { record.duration = getSeasonDuration(); changed = true; }
+            });
+            if (changed) localStorage.setItem('seasonCalendarHistory',JSON.stringify(seasonCalendarHistory));
             if (!seasonCalendarHistory.some(record => record.start === seasonStartDate)) {
-                seasonCalendarHistory.push({ start: seasonStartDate, index: currentSeasonIndex });
+                seasonCalendarHistory.push({ start: seasonStartDate, index: currentSeasonIndex, duration:getSeasonDuration() });
                 localStorage.setItem('seasonCalendarHistory', JSON.stringify(seasonCalendarHistory));
             }
             if (!seasonCalendarHistory.some(record => record.start === calendarSelectedSeason)) calendarSelectedSeason = seasonStartDate;
@@ -1108,7 +1204,7 @@
         function buildSeasonCalendar(record) {
             const start = new Date(record.start);
             start.setHours(12,0,0,0);
-            return Array.from({length:28},(_,index) => {
+            return Array.from({length:getSeasonDuration(record)},(_,index) => {
                 const date = new Date(start); date.setDate(start.getDate()+index);
                 const key = achievementDateKey(date);
                 const future = key > calendarTodayKey();
@@ -1119,7 +1215,51 @@
         function taskBelongsToCurrentSeason(key) {
             const dates = buildSeasonCalendar({start:seasonStartDate});
             const dateKey = key.slice(0,10);
-            return dateKey >= dates[0].key && dateKey <= dates[27].key && dateKey <= calendarTodayKey();
+            return dateKey >= dates[0].key && dateKey <= dates.at(-1).key && dateKey <= calendarTodayKey();
+        }
+        function buildCalendarMonths(days) {
+            const months = [];
+            for (const day of days) {
+                const year = day.date.getFullYear(), month = day.date.getMonth();
+                if (months.some(item => item.year === year && item.month === month)) continue;
+                const count = new Date(year,month+1,0,12).getDate();
+                const first = new Date(year,month,1,12);
+                months.push({year,month,count,gap:(first.getDay()+6)%7,dates:Array.from({length:count},(_,index) => {
+                    const date = new Date(year,month,index+1,12);
+                    const key = achievementDateKey(date);
+                    return {key,date,seasonDay:days.find(item=>item.key===key)};
+                })});
+            }
+            return months;
+        }
+        function renderCalendarMonths(days,today) {
+            return buildCalendarMonths(days).map(month => {
+                const heading = new Date(month.year,month.month,1,12).toLocaleDateString('ru-RU',{month:'long',year:'numeric'});
+                const cells = month.dates.map(item => {
+                    const day=item.seasonDay;
+                    if (!day) return `<button type="button" class="calendar-day calendar-day-outside" disabled aria-label="${item.date.toLocaleDateString('ru-RU')}, вне выбранного сезона"><span class="calendar-day-number">${item.date.getDate()}</span><span class="calendar-day-state">Вне сезона</span></button>`;
+                    const selected=day.key===currentDateKey;
+                    const status=day.future?'Впереди':day.done===7?'Все шаги ✓':day.done?`${day.done}/7 шагов`:'Без отметок';
+                    return `<button type="button" class="calendar-day ${day.future?'calendar-day-future':day.done===7?'calendar-day-full':day.done?'calendar-day-partial':''} ${selected?'calendar-day-selected':''}" onclick="switchDay('${day.key}')" aria-pressed="${selected}" ${day.key===today?'aria-current="date"':''} aria-label="${day.date.toLocaleDateString('ru-RU')}, день сезона ${day.number}, ${status}"><span class="calendar-day-number">${day.date.getDate()}</span><span class="calendar-day-date">День ${day.number}</span><span class="calendar-day-state">${status}</span>${day.key===today?'<span class="calendar-today-dot" aria-hidden="true"></span>':''}</button>`;
+                }).join('');
+                return `<section class="calendar-month"><h5>${heading}<span>${month.count} дней</span></h5><div class="calendar-weekdays" aria-hidden="true"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div><div class="season-calendar-grid">${'<span class="calendar-gap" aria-hidden="true"></span>'.repeat(month.gap)}${cells}</div></section>`;
+            }).join('');
+        }
+        function careSeasonForDate(key) {
+            const month = new Date(key+'T12:00:00').getMonth();
+            const id = month===11 || month<2?'winter':month<5?'spring':month<8?'summer':'autumn';
+            const names={winter:'❄️ Зима',spring:'🌷 Весна',summer:'☀️ Лето',autumn:'🍂 Осень'};
+            return {id,name:names[id]};
+        }
+        function seasonalTaskTip(id,key) {
+            const season=careSeasonForDate(key);
+            const tips={
+                winter:{m_face:'При сухости нанеси привычный крем. Защити лицо от ветра, SPF — по солнечной активности.',e_face:'Умывайся чуть тёплой водой. Не стирай шелушение скрабом — используй привычный крем.',m_hair:'На холод — чистая удобная шапка. Перед выходом высуши мокрые волосы для комфорта.',e_hair:'Распутывай без рывков. Кондиционер на длину поможет, если волосы путаются и электризуются.',m_water:'Пей по жажде: зимой вода тоже нужна, но обязательной нормы стаканов нет.',e_nail:'После мытья промокни руки и нанеси крем. На мороз — сухие перчатки или варежки.',e_sleep:'Перед сном проветри комнату со взрослым. Пусть будет комфортно, без перегрева.'},
+                spring:{m_face:'Посмотри УФ-индекс перед прогулкой. При 3 и выше нужны тень, одежда и подходящий SPF 30+.',e_face:'После прогулки вымой руки. При загрязнении мягко очисти лицо, не три глаза.',m_hair:'В ветер выбирай свободную причёску. Если холодно — шапка или капюшон ещё пригодятся.',e_hair:'Мой голову по загрязнению корней. На длину наноси кондиционер по инструкции.',m_water:'Возьми воду на прогулку и пей по жажде.',e_nail:'Высуши руки после мытья. Крем — при сухости, перчатки — в холод и ветер.',e_sleep:'Если утренний свет будит слишком рано, обсуди со взрослым шторы. Сохраняй удобное время сна.'},
+                summer:{m_face:'Защити открытые участки SPF 30+. На улице обновляй примерно каждые 2 часа и после купания или вытирания.',e_face:'После сильного пота мягко очисти лицо. После купания смой соль или воду бассейна пресной водой.',m_hair:'Панама защищает кожу головы от солнца. Не затягивай волосы туго.',e_hair:'После моря или бассейна ополосни волосы пресной водой. Кондиционер — на длину.',m_water:'В жару и после движения вода нужна чаще. Пей по жажде, держи воду под рукой.',e_nail:'На открытые кисти тоже нужен SPF. После воды нанеси крем, если руки сохнут.',e_sleep:'Даже на каникулах нужен отдых. Проветри комнату со взрослым и убери экран перед сном.'},
+                autumn:{m_face:'Если отопление сушит кожу, используй привычный крем. Солнцезащиту выбирай по УФ-индексу.',e_face:'При стянутости не усиливай очищение. Чуть тёплая вода и привычный крем — мягкая база.',m_hair:'Защити волосы от ветра свободной причёской. Чистая шапка пригодится в холод.',e_hair:'Распутывай с кончиков. Перед холодной прогулкой высуши волосы, чтобы не мёрзнуть.',m_water:'Держи воду рядом во время учёбы и пей по жажде.',e_nail:'Крем после мытья — если кожа сухая. В прохладную погоду надевай перчатки.',e_sleep:'Начни спокойный вечер заранее, чтобы школьный подъём был легче. Не гонись за галочкой.'}
+            };
+            return {season,text:tips[season.id][id]};
         }
         function renderSeasonCalendar() {
             const record = selectedCalendarSeason();
@@ -1132,17 +1272,12 @@
             const filled = days.filter(day => day.done > 0).length;
             const full = days.filter(day => day.done === calendarTaskIds.length).length;
             const future = days.filter(day => day.future).length;
-            document.getElementById('calendar-filled-days').innerText = `${filled} / 28`;
+            document.getElementById('calendar-filled-days').innerText = `${filled} / ${days.length}`;
             document.getElementById('calendar-full-days').innerText = String(full);
             document.getElementById('calendar-days-ahead').innerText = String(future);
-            document.getElementById('calendar-range').innerText = `${days[0].date.toLocaleDateString('ru-RU')} — ${days[27].date.toLocaleDateString('ru-RU')}`;
+            document.getElementById('calendar-range').innerText = `${days[0].date.toLocaleDateString('ru-RU')} — ${days.at(-1).date.toLocaleDateString('ru-RU')}`;
             document.getElementById('calendar-season-select').innerHTML = seasonCalendarHistory.slice().reverse().map(item => `<option value="${item.start}" ${item.start === record.start ? 'selected' : ''}>${seasons[item.index].name} · ${new Date(item.start).toLocaleDateString('ru-RU')}</option>`).join('');
-            const gap = (days[0].date.getDay()+6)%7;
-            document.getElementById('days-tabs').innerHTML = '<span class="calendar-gap" aria-hidden="true"></span>'.repeat(gap) + days.map(day => {
-                const selected = day.key === currentDateKey;
-                const status = day.future ? 'Впереди' : day.done === 7 ? 'Все шаги ✓' : day.done ? `${day.done}/7 шагов` : 'Без отметок';
-                return `<button type="button" class="calendar-day ${day.future ? 'calendar-day-future' : day.done === 7 ? 'calendar-day-full' : day.done ? 'calendar-day-partial' : ''} ${selected ? 'calendar-day-selected' : ''}" onclick="switchDay('${day.key}')" aria-pressed="${selected}" ${day.key === today ? 'aria-current="date"' : ''} aria-label="День ${day.number}, ${day.date.toLocaleDateString('ru-RU')}, ${status}"><span class="calendar-day-number">${day.number}</span><span class="calendar-day-date">${day.date.getDate()}.${String(day.date.getMonth()+1).padStart(2,'0')}</span><span class="calendar-day-state">${status}</span>${day.key === today ? '<span class="calendar-today-dot" aria-hidden="true"></span>' : ''}</button>`;
-            }).join('');
+            document.getElementById('days-tabs').innerHTML = renderCalendarMonths(days,today);
             const selected = days.find(day => day.key === currentDateKey);
             document.getElementById('calendar-selected-date').innerText = `День ${selected.number} · ${selected.date.toLocaleDateString('ru-RU',{weekday:'long',day:'numeric',month:'long'})}`;
             document.getElementById('calendar-day-note').innerText = selected.future
@@ -1387,14 +1522,15 @@
         }
         function currentFinalQuestResult() { return finalQuestResults[seasonStartDate] || null; }
         function renderFinalQuestCard() {
-            const ready = getSeasonElapsedDays() >= 28;
+            document.getElementById('final-quest-title').innerText = `${getSeasonDuration()} дней — и новый опыт 🌟`;
+            const ready = getSeasonElapsedDays() >= getSeasonDuration();
             const result = currentFinalQuestResult();
             const button = document.getElementById('final-quest-start');
             button.disabled = !ready;
             button.innerText = result ? 'Посмотреть мои навыки 🌟' : 'Пройти итоговый квест 🚀';
             document.getElementById('final-quest-unlock').innerText = ready
-                ? result ? 'Квест пройден! Вернись к своим навыкам или повтори ситуации.' : '28 дней позади — квест открыт! Здесь можно ошибаться и пробовать ещё.'
-                : `Откроется после 28 полных дней сезона. Осталось: ${Math.max(0, 28 - getSeasonElapsedDays())} дн.`;
+                ? result ? 'Квест пройден! Вернись к своим навыкам или повтори ситуации.' : `${getSeasonDuration()} дней позади — квест открыт! Здесь можно ошибаться и пробовать ещё.`
+                : `Откроется после ${getSeasonDuration()} полных дней сезона. Осталось: ${Math.max(0, getSeasonDuration() - getSeasonElapsedDays())} дн.`;
         }
         function saveFinalQuestProgress() { localStorage.setItem('finalQuestProgress', JSON.stringify(finalQuestProgress)); }
         function newFinalQuestProgress() {
@@ -1403,7 +1539,7 @@
         }
         function openFinalQuest() {
             renderFinalQuestCard();
-            if (getSeasonElapsedDays() < 28) return;
+            if (getSeasonElapsedDays() < getSeasonDuration()) return;
             closeSeasonModal();
             const result = currentFinalQuestResult();
             if (result) renderFinalQuestResult(result);
@@ -1416,7 +1552,7 @@
         }
         function closeFinalQuest() { document.getElementById('final-quest-modal').close(); }
         function restartFinalQuest() {
-            if (getSeasonElapsedDays() < 28) return;
+            if (getSeasonElapsedDays() < getSeasonDuration()) return;
             newFinalQuestProgress();
             renderFinalQuestQuestion();
         }
@@ -1435,7 +1571,7 @@
             next.innerText = step === finalQuestQuestions.length - 1 ? 'Забрать свои новые навыки 🌟' : 'Дальше с Мией →';
         }
         function checkFinalQuestAnswer(index) {
-            if (getSeasonElapsedDays() < 28 || !finalQuestProgress || finalQuestProgress.season !== seasonStartDate) return;
+            if (getSeasonElapsedDays() < getSeasonDuration() || !finalQuestProgress || finalQuestProgress.season !== seasonStartDate) return;
             const step = finalQuestProgress.step;
             const question = finalQuestQuestions[step];
             if (!question || !Number.isInteger(index) || index < 0 || index >= question.options.length || finalQuestProgress.correct.includes(step) || (finalQuestProgress.wrong[step] || []).includes(index)) return;
@@ -1449,7 +1585,7 @@
             if (index !== question.correct) document.getElementById('final-quest-feedback').innerText = 'Давай разберёмся вместе 💜 ' + question.why + ' Выбери другой вариант — я рядом.';
         }
         function nextFinalQuestQuestion() {
-            if (getSeasonElapsedDays() < 28 || !finalQuestProgress || finalQuestProgress.season !== seasonStartDate || !finalQuestProgress.correct.includes(finalQuestProgress.step)) return;
+            if (getSeasonElapsedDays() < getSeasonDuration() || !finalQuestProgress || finalQuestProgress.season !== seasonStartDate || !finalQuestProgress.correct.includes(finalQuestProgress.step)) return;
             if (finalQuestProgress.step === finalQuestQuestions.length - 1) {
                 if (finalQuestQuestions.some((_, index) => !finalQuestProgress.correct.includes(index))) return;
                 const result = { completedAt: new Date().toISOString(), firstTry: finalQuestQuestions.filter((_, index) => finalQuestProgress.attempts[index] === 1).length, total: finalQuestQuestions.length, revisit: finalQuestQuestions.filter((_, index) => finalQuestProgress.attempts[index] > 1).map(item => item.skill) };
@@ -1753,9 +1889,37 @@
         "art": "towels"
     },
     {
+        "id": "care-spring",
+        "title": "🌷 Весна: мягкий старт после зимы",
+        "content": "<p class=\"mia-intro\">Стало теплее? Класс! Но ветер и солнце всё ещё могут удивить. Смотри на погоду и на то, как чувствует себя твоя кожа 🌷</p>\n<h4>🧴 Лицо</h4><ol class=\"guide-steps\"><li>Умывайся мягким средством и чуть тёплой водой. Стянуло кожу — нанеси привычный крем. Если плотный зимний крем стал неудобным, со взрослым выберите более лёгкий.</li><li>Перед улицей посмотри <a href=\"#dictionary-uvindex\" onclick=\"openMiaAdvice('dictionary','dictionary-uvindex');return false;\">УФ-индекс</a>. При 3 и выше используй крем широкого спектра SPF 30+, головной убор и тень. Наноси по инструкции, обновляй примерно каждые 2 часа на улице и после воды или вытирания.</li><li>В сезон <a href=\"#dictionary-pollen\" onclick=\"openMiaAdvice('dictionary','dictionary-pollen');return false;\">пыльцы</a> не три глаза и лицо. После прогулки вымой руки; если лицо испачкалось, мягко очисти его. При повторяющемся зуде или отёке скажи взрослому — не пробуй лечиться случайной косметикой.</li></ol>\n<h4>👐 Руки</h4><p>После мытья промокни руки насухо, между пальцами тоже. Если сохнут — нанеси крем. В прохладный ветреный день перчатки ещё пригодятся: весна бывает разной!</p>\n<h4>🪮 Волосы</h4><p>Мой голову по загрязнению корней. На длину — кондиционер по инструкции, затем бережно распутай волосы. Шапку или капюшон снимай, когда стало жарко, и регулярно стирай головной убор. Не делай тугой хвост ради ветреной прогулки.</p><p class=\"mia-tip\">💜 Меняем уход по погоде и ощущениям, а не покупаем новую полку баночек к каждому сезону. Новые средства выбирай со взрослым. Если кожа сильно зудит, трескается или болит — расскажи взрослому; советы Мии не заменяют врача.</p>",
+        "category": "tips",
+        "art": "face"
+    },
+    {
+        "id": "care-summer",
+        "title": "☀️ Лето: солнце, купание и забота",
+        "content": "<p class=\"mia-intro\">Летний вайб — гулять и купаться, а Мия напомнит про защиту и комфорт ☀️</p>\n<h4>🧴 Лицо</h4><ol class=\"guide-steps\"><li><a href=\"#dictionary-photoprotection\" onclick=\"openMiaAdvice('dictionary','dictionary-photoprotection');return false;\">Фотозащита</a> — это не только крем: ищи тень, надевай панаму и делай перерывы от сильного солнца. Для открытой кожи — SPF 30+ широкого спектра, по инструкции. На улице обновляй примерно каждые 2 часа, а после плавания, сильного пота и вытирания — снова. Водостойкий не значит «на весь день».</li><li>После спорта или сильного пота мягко очисти кожу, без скраба и жёсткого трения. Не умывайся с гелем каждый час. При сухости используй привычный крем.</li><li>Кожа стала горячей и болезненной? Это может быть <a href=\"#dictionary-sunburn\" onclick=\"openMiaAdvice('dictionary','dictionary-sunburn');return false;\">солнечный ожог</a>. Уйди в тень, скажи взрослому, мягко охлади кожу прохладной водой. Не используй лёд, масло или скраб. При пузырях или плохом самочувствии нужна помощь врача.</li></ol>\n<h4>👐 Руки</h4><p>На открытые кисти тоже наноси солнцезащиту и обновляй после мытья. После бассейна или моря ополосни руки пресной водой, промокни и нанеси крем, если сохнут.</p>\n<h4>🪮 Волосы</h4><ol class=\"guide-steps\"><li>Панама защищает кожу головы от солнца. Волосы тоже лучше беречь от долгого прямого солнца, не затягивая их туго.</li><li>После <a href=\"#dictionary-saltwater\" onclick=\"openMiaAdvice('dictionary','dictionary-saltwater');return false;\">морской воды</a> или <a href=\"#dictionary-chlorine\" onclick=\"openMiaAdvice('dictionary','dictionary-chlorine');return false;\">бассейна</a> ополосни волосы пресной водой. Мой шампунем по загрязнению кожи головы, кондиционер наноси на длину.</li><li>Не выкручивай мокрые волосы: промокни полотенцем. Суши бережно; если пользуешься феном впервые, попроси взрослого помочь. Плойка — только на полностью сухие волосы, по инструкции.</li></ol><p class=\"mia-tip\">💜 Меняем уход по погоде и ощущениям, а не покупаем новую полку баночек к каждому сезону. Новые средства выбирай со взрослым. Если кожа сильно зудит, трескается или болит — расскажи взрослому; советы Мии не заменяют врача.</p>",
+        "category": "tips",
+        "art": "towels"
+    },
+    {
+        "id": "care-autumn",
+        "title": "🍂 Осень: уютный уход без пересушивания",
+        "content": "<p class=\"mia-intro\">Ветер снаружи, отопление дома — ощущения кожи могут поменяться. Подстроим пару шагов, без сложного бьюти-марафона 🍂</p>\n<h4>🧴 Лицо</h4><ol class=\"guide-steps\"><li>Если лицо стягивает или шелушится, это может быть <a href=\"#dictionary-dehydration\" onclick=\"openMiaAdvice('dictionary','dictionary-dehydration');return false;\">обезвоженность кожи</a>. Не усиливай очищение. Умывайся чуть тёплой водой и наноси привычный увлажняющий крем.</li><li>Не пытайся стереть шелушение скрабом. Крем с <a href=\"#dictionary-emollients\" onclick=\"openMiaAdvice('dictionary','dictionary-emollients');return false;\">эмолентами</a> или церамидами можно выбрать со взрослым, если обычного ухода не хватает.</li><li>Осеннее солнце тоже бывает активным: смотри УФ-индекс и продолжай солнцезащиту, когда она нужна.</li></ol>\n<h4>👐 Руки</h4><p>Положи привычный крем рядом с раковиной. После мытья промокни руки, а при сухости нанеси немного крема. В холод и ветер — перчатки. Заусенцы не отрывай: взрослый поможет ухаживать безопасно.</p>\n<h4>🪮 Волосы</h4><p>Из-за ветра волосы могут путаться, а из-за шапки — быстрее загрязняться у корней. Мой по потребности, распутывай с кончиков без рывков, используй кондиционер на длину. Шапку стирай регулярно. Перед холодной прогулкой высуши волосы для комфорта: заболеваешь от инфекций, а не от самих мокрых волос.</p>\n<p>🏠 При отоплении <a href=\"#dictionary-heatingair\" onclick=\"openMiaAdvice('dictionary','dictionary-heatingair');return false;\">воздух может стать сухим</a>. Если семья пользуется <a href=\"#dictionary-humidifier\" onclick=\"openMiaAdvice('dictionary','dictionary-humidifier');return false;\">увлажнителем</a>, его чистит и настраивает взрослый. Покупать прибор ради приложения не нужно.</p><p class=\"mia-tip\">💜 Меняем уход по погоде и ощущениям, а не покупаем новую полку баночек к каждому сезону. Новые средства выбирай со взрослым. Если кожа сильно зудит, трескается или болит — расскажи взрослому; советы Мии не заменяют врача.</p>",
+        "category": "tips",
+        "art": "hairdry"
+    },
+    {
+        "id": "care-winter",
+        "title": "❄️ Зима: бережём кожу и волосы",
+        "content": "<p class=\"mia-intro\">Холодный воздух и тёплые батареи — повод добавить бережности, а не десять новых средств ❄️</p>\n<h4>🧴 Лицо</h4><ol class=\"guide-steps\"><li>Не умывайся горячей водой. Если после очищения стягивает кожу — нанеси крем. Со взрослым можно выбрать более комфортный крем с эмолентами и <a href=\"#dictionary-occlusive\" onclick=\"openMiaAdvice('dictionary','dictionary-occlusive');return false;\">окклюзивными компонентами</a>, которые помогают удерживать влагу.</li><li>От ветра прикрывай лицо мягким шарфом, без сильного <a href=\"#dictionary-friction\" onclick=\"openMiaAdvice('dictionary','dictionary-friction');return false;\">трения</a>. Бальзам для губ — по потребности. Не облизывай потрескавшиеся губы.</li><li>Солнцезащита нужна и зимой при активном солнце, особенно на снегу и в горах. Смотри УФ-индекс; там защита может понадобиться и при низком значении. Выбирай SPF и одежду со взрослым.</li></ol>\n<h4>👐 Руки</h4><ol class=\"guide-steps\"><li>В холод носи сухие варежки или перчатки. Мокрые замени, когда можешь. После мытья хорошо промокни руки и нанеси крем, если кожа сохнет.</li><li>Не грей замёрзшие руки на батарее или в горячей воде. Согревай постепенно в тёплом месте. Если кожа немеет, белеет, болит или появились пузыри — сразу скажи взрослому и обратитесь за медицинской помощью.</li></ol>\n<h4>🪮 Волосы</h4><p>Шапка бережёт кожу головы от холода. Выбирай удобную, не слишком тесную, и держи её чистой. <a href=\"#dictionary-statichair\" onclick=\"openMiaAdvice('dictionary','dictionary-statichair');return false;\">Статическое электричество</a> может делать волосы пушистыми: кондиционер и мягкое распутывание помогут уменьшить спутывание. Мой голову по загрязнению, не по правилу «зимой реже». Перед морозной прогулкой высуши волосы, чтобы не мёрзнуть.</p><p class=\"mia-tip\">💜 Меняем уход по погоде и ощущениям, а не покупаем новую полку баночек к каждому сезону. Новые средства выбирай со взрослым. Если кожа сильно зудит, трескается или болит — расскажи взрослому; советы Мии не заменяют врача.</p>",
+        "category": "tips",
+        "art": "winterhat"
+    },
+    {
         "id": "dictionary",
         "title": "📖 Словарь бьюти-феи: понятные слова + картинки",
-        "content": "<p class=\"mia-intro\">Бьюти-слова без загадок ✨ Здесь не список обязательных покупок, а подсказки, чтобы понимать упаковки и советы. Картинки показывают пример: твои баночки могут выглядеть иначе.</p><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-0\" role=\"img\" aria-label=\"Очищение\"></div><h4>Очищение</h4></div><dl><dt>Гель для умывания</dt><dd>Средство, которое помогает смыть загрязнения. Используют на влажной коже и полностью смывают.</dd><dt>Пенка</dt><dd>Средство для очищения в виде пены. Мягкость зависит от состава, а не от количества пузырьков.</dd><dt>Молочко</dt><dd>Кремообразное очищающее средство. Смывать ли его и как наносить — смотри на упаковке.</dd><dt>pH</dt><dd>Показатель кислотности. Не нужно измерять его дома: выбирай средство, подходящее для лица.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-1\" role=\"img\" aria-label=\"Увлажнение\"></div><h4>Увлажнение</h4></div><dl><dt id=\"dictionary-cream\" tabindex=\"-1\">Увлажняющий крем</dt><dd>Помогает коже удерживать влагу и уменьшает сухость. Это базовый уход, а не только средство «для взрослых».</dd><dt>Лосьон / молочко для тела</dt><dd>Более жидкий крем для кожи тела. Обычно наносят после душа.</dd><dt>Кожный барьер</dt><dd>Внешний защитный слой кожи. Жёсткое мытьё и трение могут его раздражать.</dd><dt>Церамиды</dt><dd>Жиры, которые есть в защитном слое кожи. Их также добавляют в некоторые кремы.</dd><dt>Некомедогенно</dt><dd>Маркировка средства, которое разработано с меньшим риском закупоривания пор. Не гарантия, что оно подойдёт именно тебе.</dd><dt>Тоник</dt><dd>Дополнительное средство после очищения. Не обязательная часть базового ухода.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-2\" role=\"img\" aria-label=\"Защита от солнца\"></div><h4>Защита от солнца</h4></div><dl><dt id=\"dictionary-spf\" tabindex=\"-1\">SPF</dt><dd>Число, описывающее защиту преимущественно от UVB-лучей. Для улицы выбирайте SPF 30+ вместе со взрослым.</dd><dt>UVA / UVB</dt><dd>Два вида ультрафиолетовых лучей. На упаковке ищите защиту широкого спектра, которая охватывает оба.</dd><dt>Водостойкость</dt><dd>Средство сохраняет защиту ограниченное время в воде, указанное на упаковке. После купания и вытирания его обновляют.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-3\" role=\"img\" aria-label=\"Снятие макияжа\"></div><h4>Снятие макияжа</h4></div><dl><dt>Мицеллярная вода</dt><dd>Средство для удаления макияжа и загрязнений. Наносится на диск; после него обычно умываются, ориентируясь на инструкцию.</dd><dt>Демакияж</dt><dd>Снятие макияжа перед обычным очищением.</dd><dt>Патч-тест</dt><dd>Проба нового средства на небольшом участке по инструкции. Может помочь заметить раздражение, но не исключает аллергию.</dd><dt>Активы</dt><dd>Компоненты с определённым действием, например кислоты или ретиноиды. Для первого ухода не нужны; лечебный уход подбирают с врачом.</dd><dt>Скраб / пилинг</dt><dd>Средства для отшелушивания: скраб действует частицами, пилинг часто кислотами. Могут раздражать кожу; не стартовый обязательный шаг.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-4\" role=\"img\" aria-label=\"Мытьё волос\"></div><h4>Мытьё волос</h4></div><dl><dt>Шампунь</dt><dd>Очищает прежде всего кожу головы. Его полностью смывают.</dd><dt>Кондиционер / бальзам</dt><dd>Помогает распутать и смягчить длину волос. Обычно смываемый; время — по инструкции.</dd><dt>Маска для волос</dt><dd>Дополнительное средство для длины, которое обычно выдерживают и смывают. Не обязательна после каждого мытья.</dd><dt>Несмываемый уход</dt><dd>Средство, которое оставляют на волосах в указанном количестве. Не каждый кондиционер можно не смывать.</dd><dt>Себум</dt><dd>Естественный кожный жир. Это часть защиты кожи, а не «грязь», которую нужно удалять до скрипа.</dd><dt>Себорегуляция</dt><dd>Действие средств, направленное на уменьшение жирности. Не обещает автоматически избавить от прыщиков.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-5\" role=\"img\" aria-label=\"Инструменты\"></div><h4>Инструменты</h4></div><dl><dt id=\"dictionary-comb\" tabindex=\"-1\">Расчёска с редкими зубьями</dt><dd>Помогает мягко распутывать небольшие пряди с кончиков.</dd><dt>Пилочка</dt><dd>Инструмент для сглаживания края ногтя. Ей не нужно стачивать поверхность ногтя.</dd><dt id=\"dictionary-cuticle\" tabindex=\"-1\">Кутикула</dt><dd>Тонкая кожа у основания ногтя, которая его защищает. Новичку достаточно увлажнения, без срезания.</dd><dt>Заусенец</dt><dd>Маленький надорванный участок кожи возле ногтя. Не отрывай: попроси взрослого помочь.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-6\" role=\"img\" aria-label=\"Макияж по желанию\"></div><h4>Макияж по желанию</h4></div><dl><dt>Бальзам для губ</dt><dd>Защитный и смягчающий уход. Бывает без цвета или с лёгким оттенком.</dd><dt>Блеск</dt><dd>Средство, добавляющее губам блеск, иногда цвет. Не обязан заменять бальзам.</dd><dt>Тинт</dt><dd>Средство со стойким оттенком для губ или щёк — область применения указана на упаковке.</dd><dt>Консилер</dt><dd>Средство для точечного выравнивания цвета кожи. Не лечит воспаления.</dd><dt>Свотч</dt><dd>Небольшой пробный мазок, чтобы посмотреть оттенок. Тестеры не наносят прямо на губы или глаза.</dd><dt>6M / 12M</dt><dd>Срок использования после вскрытия: 6 или 12 месяцев. Ещё проверь общий срок годности.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-7\" role=\"img\" aria-label=\"Укладка\"></div><h4>Укладка</h4></div><dl><dt>Термозащита</dt><dd>Средство, которое помогает уменьшить повреждение от нагрева. Не защищает кожу от ожога и не делает максимальную температуру безопасной.</dd><dt>Фен</dt><dd>Прибор для сушки воздухом. Первый раз используй со взрослым, в сухом помещении вдали от воды.</dd><dt>Плойка</dt><dd>Горячий прибор для завивки сухих волос. Первое знакомство — только в присутствии взрослого.</dd><dt>Утюжок</dt><dd>Прибор с горячими пластинами для укладки сухих волос. Нельзя задерживать на одной пряди.</dd><dt>Диффузор</dt><dd>Широкая насадка на фен, которая распределяет воздух; часто удобна для кудрей. Режим помогает выбрать взрослый.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-towels\" role=\"img\" aria-label=\"Полотенца и умывание\"></div><h4>Полотенца и умывание</h4></div><dl><dt>Махра</dt><dd>Ткань с петельками, часто хлопковая. Для лица важны мягкость и чистота, а не только название.</dd><dt>Микрофибра</dt><dd>Ткань из очень тонких волокон. Бывает мягкой, но подходит не всем; важно бережное использование и стирка.</dd><dt>Повязка для умывания</dt><dd>Мягкая полоска ткани, удерживающая волосы вне лица. Не должна сдавливать голову.</dd><dt>Напульсники для умывания</dt><dd>Тканевые манжеты на запястья, которые впитывают стекающую воду. Необязательный аксессуар.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-brushes\" role=\"img\" aria-label=\"Виды расчёсок\"></div><h4>Виды расчёсок</h4></div><dl><dt>Гребень</dt><dd>Расчёска с одним рядом зубьев. Редкие гладкие зубья часто удобны для распутывания.</dd><dt>Щётка для распутывания</dt><dd>Щётка с гибкими зубчиками, помогающая бережно разобрать узлы с кончиков.</dd><dt>Массажная щётка</dt><dd>Плоская щётка с зубчиками; несмотря на название, сильно давить на кожу не нужно.</dd><dt>Брашинг</dt><dd>Круглая щётка для укладки с феном. Для первого использования нужна помощь взрослого.</dd><dt>Скелетная щётка</dt><dd>Щётка с отверстиями в корпусе, пропускающими воздух при сушке.</dd><dt>Натуральная щетина</dt><dd>Щетинки животного происхождения в некоторых щётках; могут приглаживать волосы, но не универсальны.</dd><dt>Силиконовая щётка для кожи головы</dt><dd>Мягкий инструмент для очищения кожи головы без нажима; необязателен, на раздражённой коже не используют.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-styling\" role=\"img\" aria-label=\"Средства для укладки\"></div><h4>Средства для укладки</h4></div><dl><dt>Мусс / пенка</dt><dd>Пенообразное средство для объёма или оформления волн. Количество и нанесение — по инструкции.</dd><dt>Гель для укладки</dt><dd>Средство для фиксации формы волос; отличается от геля для умывания.</dd><dt>Крем для локонов</dt><dd>Средство для мягкости и оформления завитка, часто с небольшой фиксацией.</dd><dt>Спрей для распутывания</dt><dd>Облегчает разбор узелков по длине. Термозащита — только если отдельно указана.</dd><dt>Лак для волос</dt><dd>Средство для закрепления укладки. Аэрозоли нельзя вдыхать и использовать рядом с нагревом или огнём.</dd><dt>Воск / помада для волос</dt><dd>Плотное средство для выделения отдельных прядей; берут совсем немного.</dd><dt>Солевой спрей</dt><dd>Средство для текстуры, которое может подсушивать волосы. Необязательное, для первого опыта — со взрослым.</dd><dt>Сухой шампунь</dt><dd>Временно уменьшает видимую жирность, но не заменяет мытьё водой и обычным шампунем.</dd><dt>Концентратор</dt><dd>Узкая насадка фена, направляющая поток воздуха. Нельзя прижимать к волосам.</dd><dt>Термостойкая подставка</dt><dd>Поверхность, рассчитанная на горячий прибор; обычное полотенце её не заменяет.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-ties\" role=\"img\" aria-label=\"Резинки и натяжение\"></div><h4>Резинки и натяжение</h4></div><dl><dt>Скранчи</dt><dd>Объёмная резинка в тканевой оболочке, например атласной. Подходит, если не тянет и не цепляет.</dd><dt>Бесшовная резинка</dt><dd>Мягкая резинка без жёсткого стыка; размер должен соответствовать волосам.</dd><dt>Резинка-спираль</dt><dd>Пластиковая резинка в форме пружинки. Может запутываться; подходит не всем.</dd><dt>Силиконовые мини-резинки</dt><dd>Маленькие резинки для отдельных прядей и косичек. Снимают бережно, при необходимости со взрослым.</dd><dt>Тракционная алопеция</dt><dd>Выпадение волос из-за длительного сильного натяжения. Болезненность или поредение у лба — повод сказать взрослому и обратиться к врачу.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-curlers\" role=\"img\" aria-label=\"Укладка на бигуди\"></div><h4>Укладка на бигуди</h4></div><dl><dt>Мягкие поролоновые бигуди</dt><dd>Мягкие цилиндры для завивки без нагрева; зажим не должен давить.</dd><dt>Папильотки</dt><dd>Гибкие палочки-бигуди, которые сгибают для фиксации пряди.</dd><dt>Бигуди-липучки</dt><dd>Роллеры с цепляющей поверхностью для объёма. Длинные и кудрявые волосы могут в них запутаться.</dd><dt>Роллеры на зажимах</dt><dd>Бигуди, удерживаемые отдельным зажимом. Накрутка не должна тянуть корни.</dd><dt>Лента для локонов</dt><dd>Мягкий валик для оборачивания прядей и завивки без нагрева.</dd><dt>Термобигуди</dt><dd>Бигуди, которые предварительно нагревают, иногда в горячей воде. Возможен ожог; используются со взрослым.</dd><dt>Электробигуди</dt><dd>Бигуди, нагреваемые в электрическом устройстве. Не для первого самостоятельного опыта.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-makeupchoice\" role=\"img\" aria-label=\"Макияж и гигиена\"></div><h4>Макияж и гигиена</h4></div><dl><dt>Растушёвка</dt><dd>Мягкое распределение границ косметики, чтобы переход был плавным, если так задумано.</dd><dt>Подтон</dt><dd>Цветовой оттенок кожи под основным тоном, который учитывают при подборе тонального средства.</dd><dt>Плотное покрытие</dt><dd>Слой макияжа, сильнее перекрывающий цвет кожи. Не автоматически вредный, но может быть неудобен и требует подходящего снятия.</dd><dt>Стойкая косметика</dt><dd>Средства, рассчитанные на более длительное ношение. Для снятия нужно подходящее средство, без сильного трения.</dd><dt>Кисть / спонж</dt><dd>Инструменты для нанесения косметики, которые нужно регулярно очищать и просушивать.</dd><dt>Дерматолог</dt><dd>Врач, который помогает разобраться с заболеваниями кожи, волос и ногтей.</dd><dt>Дезодорант</dt><dd>Средство для уменьшения запаха пота; не заменяет мытьё и чистую одежду.</dd><dt>Онихофагия</dt><dd>Название привычки грызть ногти. Не повод для стыда: поддержку можно получить у взрослого или специалиста.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-wintergloves\" role=\"img\" aria-label=\"Зимний комфорт\"></div><h4>Зимний комфорт</h4></div><dl><dt>Обморожение</dt><dd>Повреждение тканей от холода. Онемение, побеление и боль требуют помощи взрослого; снегом кожу не растирают.</dd><dt>Переохлаждение</dt><dd>Опасное снижение температуры тела. Нужно перейти в тепло и обратиться за помощью, а не терпеть холод.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-1\" role=\"img\" aria-label=\"Средства с разными текстурами\"></div><h4>Текстуры, маски и материалы</h4></div><dl><dt>Т-зона</dt><dd>Лоб, нос и подбородок, где кожа у многих людей бывает жирнее, чем на щеках.</dd><dt>Флюид</dt><dd>Лёгкое жидкое средство, например увлажняющее. Название текстуры не гарантирует подходящий состав.</dd><dt>Крем-гель</dt><dd>Лёгкая кремовая или гелевая текстура. Выбор зависит от комфорта кожи, а не только от названия.</dd><dt>Отдушка</dt><dd>Компоненты, создающие запах средства. У чувствительной кожи некоторые могут вызывать раздражение.</dd><dt>Тканевая маска</dt><dd>Пропитанная средством ткань с отверстиями для глаз, носа и рта. Время и смывание — по упаковке.</dd><dt>Глиняная маска</dt><dd>Маска с глиной, которая может впитывать избыток кожного жира. Не надо ждать сухих трещин.</dd><dt>Кремовая маска</dt><dd>Маска с кремовой текстурой; используют и смывают либо оставляют только по инструкции.</dd><dt>Маска-плёнка</dt><dd>Маска, высыхающая в снимаемую плёнку. Может раздражать при снятии и не нужна для первого ухода.</dd><dt>Кислоты в уходе</dt><dd>Компоненты с разным действием, часто для отшелушивания. Новичку не обязательны; активный или лечебный уход обсуждают со взрослым и врачом.</dd><dt>Ретиноиды</dt><dd>Группа веществ, которую используют в том числе для лечения акне. Не для самостоятельных первых экспериментов; применение обсуждают с врачом.</dd><dt>Атлас</dt><dd>Гладкое переплетение ткани; бывает из разных волокон. В скранчи может уменьшать трение, но не отменяет натяжение.</dd><dt>Шёлк</dt><dd>Натуральное волокно, из которого делают гладкую ткань. Мягкая резинка из другого подходящего материала тоже может быть удобной.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-sleep\" role=\"img\" aria-label=\"Спокойный вечер и здоровый сон\"></div><h4>Сон и повседневные привычки</h4></div><dl><dt id=\"dictionary-sleep\" tabindex=\"-1\">Гигиена сна</dt><dd>Привычки и условия, помогающие спать: спокойный вечер, комфортная комната и регулярное расписание.</dd><dt>Циркадный ритм</dt><dd>Внутренний суточный ритм организма, связанный в том числе со светом и временем сна.</dd><dt>Мелатонин</dt><dd>Гормон, участвующий в настройке сна и бодрствования. Препараты с ним не принимают самостоятельно; обсудите необходимость с врачом.</dd><dt>Хронический недосып</dt><dd>Регулярное получение меньшего количества сна, чем нужно организму. Может влиять на самочувствие, внимание и здоровье.</dd><dt>Кофеин</dt><dd>Вещество в кофе, чае и некоторых напитках, которое может бодрить и мешать засыпанию.</dd><dt>Энергетик</dt><dd>Напиток со стимулирующими компонентами, часто кофеином. Для подростков не подходит.</dd><dt id=\"dictionary-water\" tabindex=\"-1\">Питьевой режим</dt><dd>Привычка пить воду по потребности и учитывать жару и движение; обязательный стакан натощак не нужен.</dd></dl></section>"
+        "content": "<p class=\"mia-intro\">Бьюти-слова без загадок ✨ Здесь не список обязательных покупок, а подсказки, чтобы понимать упаковки и советы. Картинки показывают пример: твои баночки могут выглядеть иначе.</p><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-0\" role=\"img\" aria-label=\"Очищение\"></div><h4>Очищение</h4></div><dl><dt>Гель для умывания</dt><dd>Средство, которое помогает смыть загрязнения. Используют на влажной коже и полностью смывают.</dd><dt>Пенка</dt><dd>Средство для очищения в виде пены. Мягкость зависит от состава, а не от количества пузырьков.</dd><dt>Молочко</dt><dd>Кремообразное очищающее средство. Смывать ли его и как наносить — смотри на упаковке.</dd><dt>pH</dt><dd>Показатель кислотности. Не нужно измерять его дома: выбирай средство, подходящее для лица.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-1\" role=\"img\" aria-label=\"Увлажнение\"></div><h4>Увлажнение</h4></div><dl><dt id=\"dictionary-cream\" tabindex=\"-1\">Увлажняющий крем</dt><dd>Помогает коже удерживать влагу и уменьшает сухость. Это базовый уход, а не только средство «для взрослых».</dd><dt>Лосьон / молочко для тела</dt><dd>Более жидкий крем для кожи тела. Обычно наносят после душа.</dd><dt>Кожный барьер</dt><dd>Внешний защитный слой кожи. Жёсткое мытьё и трение могут его раздражать.</dd><dt>Церамиды</dt><dd>Жиры, которые есть в защитном слое кожи. Их также добавляют в некоторые кремы.</dd><dt>Некомедогенно</dt><dd>Маркировка средства, которое разработано с меньшим риском закупоривания пор. Не гарантия, что оно подойдёт именно тебе.</dd><dt>Тоник</dt><dd>Дополнительное средство после очищения. Не обязательная часть базового ухода.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-2\" role=\"img\" aria-label=\"Защита от солнца\"></div><h4>Защита от солнца</h4></div><dl><dt id=\"dictionary-spf\" tabindex=\"-1\">SPF</dt><dd>Число, описывающее защиту преимущественно от UVB-лучей. Для улицы выбирайте SPF 30+ вместе со взрослым.</dd><dt>UVA / UVB</dt><dd>Два вида ультрафиолетовых лучей. На упаковке ищите защиту широкого спектра, которая охватывает оба.</dd><dt>Водостойкость</dt><dd>Средство сохраняет защиту ограниченное время в воде, указанное на упаковке. После купания и вытирания его обновляют.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-3\" role=\"img\" aria-label=\"Снятие макияжа\"></div><h4>Снятие макияжа</h4></div><dl><dt>Мицеллярная вода</dt><dd>Средство для удаления макияжа и загрязнений. Наносится на диск; после него обычно умываются, ориентируясь на инструкцию.</dd><dt>Демакияж</dt><dd>Снятие макияжа перед обычным очищением.</dd><dt>Патч-тест</dt><dd>Проба нового средства на небольшом участке по инструкции. Может помочь заметить раздражение, но не исключает аллергию.</dd><dt>Активы</dt><dd>Компоненты с определённым действием, например кислоты или ретиноиды. Для первого ухода не нужны; лечебный уход подбирают с врачом.</dd><dt>Скраб / пилинг</dt><dd>Средства для отшелушивания: скраб действует частицами, пилинг часто кислотами. Могут раздражать кожу; не стартовый обязательный шаг.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-4\" role=\"img\" aria-label=\"Мытьё волос\"></div><h4>Мытьё волос</h4></div><dl><dt>Шампунь</dt><dd>Очищает прежде всего кожу головы. Его полностью смывают.</dd><dt>Кондиционер / бальзам</dt><dd>Помогает распутать и смягчить длину волос. Обычно смываемый; время — по инструкции.</dd><dt>Маска для волос</dt><dd>Дополнительное средство для длины, которое обычно выдерживают и смывают. Не обязательна после каждого мытья.</dd><dt>Несмываемый уход</dt><dd>Средство, которое оставляют на волосах в указанном количестве. Не каждый кондиционер можно не смывать.</dd><dt>Себум</dt><dd>Естественный кожный жир. Это часть защиты кожи, а не «грязь», которую нужно удалять до скрипа.</dd><dt>Себорегуляция</dt><dd>Действие средств, направленное на уменьшение жирности. Не обещает автоматически избавить от прыщиков.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-5\" role=\"img\" aria-label=\"Инструменты\"></div><h4>Инструменты</h4></div><dl><dt id=\"dictionary-comb\" tabindex=\"-1\">Расчёска с редкими зубьями</dt><dd>Помогает мягко распутывать небольшие пряди с кончиков.</dd><dt>Пилочка</dt><dd>Инструмент для сглаживания края ногтя. Ей не нужно стачивать поверхность ногтя.</dd><dt id=\"dictionary-cuticle\" tabindex=\"-1\">Кутикула</dt><dd>Тонкая кожа у основания ногтя, которая его защищает. Новичку достаточно увлажнения, без срезания.</dd><dt>Заусенец</dt><dd>Маленький надорванный участок кожи возле ногтя. Не отрывай: попроси взрослого помочь.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-6\" role=\"img\" aria-label=\"Макияж по желанию\"></div><h4>Макияж по желанию</h4></div><dl><dt>Бальзам для губ</dt><dd>Защитный и смягчающий уход. Бывает без цвета или с лёгким оттенком.</dd><dt>Блеск</dt><dd>Средство, добавляющее губам блеск, иногда цвет. Не обязан заменять бальзам.</dd><dt>Тинт</dt><dd>Средство со стойким оттенком для губ или щёк — область применения указана на упаковке.</dd><dt>Консилер</dt><dd>Средство для точечного выравнивания цвета кожи. Не лечит воспаления.</dd><dt>Свотч</dt><dd>Небольшой пробный мазок, чтобы посмотреть оттенок. Тестеры не наносят прямо на губы или глаза.</dd><dt>6M / 12M</dt><dd>Срок использования после вскрытия: 6 или 12 месяцев. Ещё проверь общий срок годности.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-7\" role=\"img\" aria-label=\"Укладка\"></div><h4>Укладка</h4></div><dl><dt>Термозащита</dt><dd>Средство, которое помогает уменьшить повреждение от нагрева. Не защищает кожу от ожога и не делает максимальную температуру безопасной.</dd><dt>Фен</dt><dd>Прибор для сушки воздухом. Первый раз используй со взрослым, в сухом помещении вдали от воды.</dd><dt>Плойка</dt><dd>Горячий прибор для завивки сухих волос. Первое знакомство — только в присутствии взрослого.</dd><dt>Утюжок</dt><dd>Прибор с горячими пластинами для укладки сухих волос. Нельзя задерживать на одной пряди.</dd><dt>Диффузор</dt><dd>Широкая насадка на фен, которая распределяет воздух; часто удобна для кудрей. Режим помогает выбрать взрослый.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-towels\" role=\"img\" aria-label=\"Полотенца и умывание\"></div><h4>Полотенца и умывание</h4></div><dl><dt>Махра</dt><dd>Ткань с петельками, часто хлопковая. Для лица важны мягкость и чистота, а не только название.</dd><dt>Микрофибра</dt><dd>Ткань из очень тонких волокон. Бывает мягкой, но подходит не всем; важно бережное использование и стирка.</dd><dt>Повязка для умывания</dt><dd>Мягкая полоска ткани, удерживающая волосы вне лица. Не должна сдавливать голову.</dd><dt>Напульсники для умывания</dt><dd>Тканевые манжеты на запястья, которые впитывают стекающую воду. Необязательный аксессуар.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-brushes\" role=\"img\" aria-label=\"Виды расчёсок\"></div><h4>Виды расчёсок</h4></div><dl><dt>Гребень</dt><dd>Расчёска с одним рядом зубьев. Редкие гладкие зубья часто удобны для распутывания.</dd><dt>Щётка для распутывания</dt><dd>Щётка с гибкими зубчиками, помогающая бережно разобрать узлы с кончиков.</dd><dt>Массажная щётка</dt><dd>Плоская щётка с зубчиками; несмотря на название, сильно давить на кожу не нужно.</dd><dt>Брашинг</dt><dd>Круглая щётка для укладки с феном. Для первого использования нужна помощь взрослого.</dd><dt>Скелетная щётка</dt><dd>Щётка с отверстиями в корпусе, пропускающими воздух при сушке.</dd><dt>Натуральная щетина</dt><dd>Щетинки животного происхождения в некоторых щётках; могут приглаживать волосы, но не универсальны.</dd><dt>Силиконовая щётка для кожи головы</dt><dd>Мягкий инструмент для очищения кожи головы без нажима; необязателен, на раздражённой коже не используют.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-styling\" role=\"img\" aria-label=\"Средства для укладки\"></div><h4>Средства для укладки</h4></div><dl><dt>Мусс / пенка</dt><dd>Пенообразное средство для объёма или оформления волн. Количество и нанесение — по инструкции.</dd><dt>Гель для укладки</dt><dd>Средство для фиксации формы волос; отличается от геля для умывания.</dd><dt>Крем для локонов</dt><dd>Средство для мягкости и оформления завитка, часто с небольшой фиксацией.</dd><dt>Спрей для распутывания</dt><dd>Облегчает разбор узелков по длине. Термозащита — только если отдельно указана.</dd><dt>Лак для волос</dt><dd>Средство для закрепления укладки. Аэрозоли нельзя вдыхать и использовать рядом с нагревом или огнём.</dd><dt>Воск / помада для волос</dt><dd>Плотное средство для выделения отдельных прядей; берут совсем немного.</dd><dt>Солевой спрей</dt><dd>Средство для текстуры, которое может подсушивать волосы. Необязательное, для первого опыта — со взрослым.</dd><dt>Сухой шампунь</dt><dd>Временно уменьшает видимую жирность, но не заменяет мытьё водой и обычным шампунем.</dd><dt>Концентратор</dt><dd>Узкая насадка фена, направляющая поток воздуха. Нельзя прижимать к волосам.</dd><dt>Термостойкая подставка</dt><dd>Поверхность, рассчитанная на горячий прибор; обычное полотенце её не заменяет.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-ties\" role=\"img\" aria-label=\"Резинки и натяжение\"></div><h4>Резинки и натяжение</h4></div><dl><dt>Скранчи</dt><dd>Объёмная резинка в тканевой оболочке, например атласной. Подходит, если не тянет и не цепляет.</dd><dt>Бесшовная резинка</dt><dd>Мягкая резинка без жёсткого стыка; размер должен соответствовать волосам.</dd><dt>Резинка-спираль</dt><dd>Пластиковая резинка в форме пружинки. Может запутываться; подходит не всем.</dd><dt>Силиконовые мини-резинки</dt><dd>Маленькие резинки для отдельных прядей и косичек. Снимают бережно, при необходимости со взрослым.</dd><dt>Тракционная алопеция</dt><dd>Выпадение волос из-за длительного сильного натяжения. Болезненность или поредение у лба — повод сказать взрослому и обратиться к врачу.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-curlers\" role=\"img\" aria-label=\"Укладка на бигуди\"></div><h4>Укладка на бигуди</h4></div><dl><dt>Мягкие поролоновые бигуди</dt><dd>Мягкие цилиндры для завивки без нагрева; зажим не должен давить.</dd><dt>Папильотки</dt><dd>Гибкие палочки-бигуди, которые сгибают для фиксации пряди.</dd><dt>Бигуди-липучки</dt><dd>Роллеры с цепляющей поверхностью для объёма. Длинные и кудрявые волосы могут в них запутаться.</dd><dt>Роллеры на зажимах</dt><dd>Бигуди, удерживаемые отдельным зажимом. Накрутка не должна тянуть корни.</dd><dt>Лента для локонов</dt><dd>Мягкий валик для оборачивания прядей и завивки без нагрева.</dd><dt>Термобигуди</dt><dd>Бигуди, которые предварительно нагревают, иногда в горячей воде. Возможен ожог; используются со взрослым.</dd><dt>Электробигуди</dt><dd>Бигуди, нагреваемые в электрическом устройстве. Не для первого самостоятельного опыта.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-makeupchoice\" role=\"img\" aria-label=\"Макияж и гигиена\"></div><h4>Макияж и гигиена</h4></div><dl><dt>Растушёвка</dt><dd>Мягкое распределение границ косметики, чтобы переход был плавным, если так задумано.</dd><dt>Подтон</dt><dd>Цветовой оттенок кожи под основным тоном, который учитывают при подборе тонального средства.</dd><dt>Плотное покрытие</dt><dd>Слой макияжа, сильнее перекрывающий цвет кожи. Не автоматически вредный, но может быть неудобен и требует подходящего снятия.</dd><dt>Стойкая косметика</dt><dd>Средства, рассчитанные на более длительное ношение. Для снятия нужно подходящее средство, без сильного трения.</dd><dt>Кисть / спонж</dt><dd>Инструменты для нанесения косметики, которые нужно регулярно очищать и просушивать.</dd><dt>Дерматолог</dt><dd>Врач, который помогает разобраться с заболеваниями кожи, волос и ногтей.</dd><dt>Дезодорант</dt><dd>Средство для уменьшения запаха пота; не заменяет мытьё и чистую одежду.</dd><dt>Онихофагия</dt><dd>Название привычки грызть ногти. Не повод для стыда: поддержку можно получить у взрослого или специалиста.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art extra-art extra-art-wintergloves\" role=\"img\" aria-label=\"Зимний комфорт\"></div><h4>Зимний комфорт</h4></div><dl><dt>Обморожение</dt><dd>Повреждение тканей от холода. Онемение, побеление и боль требуют помощи взрослого; снегом кожу не растирают.</dd><dt>Переохлаждение</dt><dd>Опасное снижение температуры тела. Нужно перейти в тепло и обратиться за помощью, а не терпеть холод.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-1\" role=\"img\" aria-label=\"Средства с разными текстурами\"></div><h4>Текстуры, маски и материалы</h4></div><dl><dt>Т-зона</dt><dd>Лоб, нос и подбородок, где кожа у многих людей бывает жирнее, чем на щеках.</dd><dt>Флюид</dt><dd>Лёгкое жидкое средство, например увлажняющее. Название текстуры не гарантирует подходящий состав.</dd><dt>Крем-гель</dt><dd>Лёгкая кремовая или гелевая текстура. Выбор зависит от комфорта кожи, а не только от названия.</dd><dt>Отдушка</dt><dd>Компоненты, создающие запах средства. У чувствительной кожи некоторые могут вызывать раздражение.</dd><dt>Тканевая маска</dt><dd>Пропитанная средством ткань с отверстиями для глаз, носа и рта. Время и смывание — по упаковке.</dd><dt>Глиняная маска</dt><dd>Маска с глиной, которая может впитывать избыток кожного жира. Не надо ждать сухих трещин.</dd><dt>Кремовая маска</dt><dd>Маска с кремовой текстурой; используют и смывают либо оставляют только по инструкции.</dd><dt>Маска-плёнка</dt><dd>Маска, высыхающая в снимаемую плёнку. Может раздражать при снятии и не нужна для первого ухода.</dd><dt>Кислоты в уходе</dt><dd>Компоненты с разным действием, часто для отшелушивания. Новичку не обязательны; активный или лечебный уход обсуждают со взрослым и врачом.</dd><dt>Ретиноиды</dt><dd>Группа веществ, которую используют в том числе для лечения акне. Не для самостоятельных первых экспериментов; применение обсуждают с врачом.</dd><dt>Атлас</dt><dd>Гладкое переплетение ткани; бывает из разных волокон. В скранчи может уменьшать трение, но не отменяет натяжение.</dd><dt>Шёлк</dt><dd>Натуральное волокно, из которого делают гладкую ткань. Мягкая резинка из другого подходящего материала тоже может быть удобной.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-sleep\" role=\"img\" aria-label=\"Спокойный вечер и здоровый сон\"></div><h4>Сон и повседневные привычки</h4></div><dl><dt id=\"dictionary-sleep\" tabindex=\"-1\">Гигиена сна</dt><dd>Привычки и условия, помогающие спать: спокойный вечер, комфортная комната и регулярное расписание.</dd><dt>Циркадный ритм</dt><dd>Внутренний суточный ритм организма, связанный в том числе со светом и временем сна.</dd><dt>Мелатонин</dt><dd>Гормон, участвующий в настройке сна и бодрствования. Препараты с ним не принимают самостоятельно; обсудите необходимость с врачом.</dd><dt>Хронический недосып</dt><dd>Регулярное получение меньшего количества сна, чем нужно организму. Может влиять на самочувствие, внимание и здоровье.</dd><dt>Кофеин</dt><dd>Вещество в кофе, чае и некоторых напитках, которое может бодрить и мешать засыпанию.</dd><dt>Энергетик</dt><dd>Напиток со стимулирующими компонентами, часто кофеином. Для подростков не подходит.</dd><dt id=\"dictionary-water\" tabindex=\"-1\">Питьевой режим</dt><dd>Привычка пить воду по потребности и учитывать жару и движение; обязательный стакан натощак не нужен.</dd></dl></section><section class=\"dictionary-group\"><div class=\"dictionary-heading\"><div class=\"glossary-art glossary-art-2\" role=\"img\" aria-label=\"Сезонная забота и солнцезащита\"></div><h4>🌷☀️🍂❄️ Уход по сезонам</h4></div><dl><dt id=\"dictionary-uvindex\" tabindex=\"-1\">УФ-индекс</dt><dd>Число в прогнозе погоды: показывает силу ультрафиолета. При значении 3 и выше на улице особенно важны тень, одежда и солнцезащита. Прохлада и облака не означают, что ультрафиолета нет.</dd><dt id=\"dictionary-photoprotection\" tabindex=\"-1\">Фотозащита</dt><dd>Защита от солнечного излучения: тень, головной убор, одежда и подходящий SPF. Один крем не делает долгое пребывание на солнце безопасным.</dd><dt id=\"dictionary-sunburn\" tabindex=\"-1\">Солнечный ожог</dt><dd>Повреждение кожи от солнца. Кожа может стать красной, горячей и болезненной. Уйди с солнца и скажи взрослому; при пузырях, сильной боли или плохом самочувствии нужна медицинская помощь.</dd><dt id=\"dictionary-dehydration\" tabindex=\"-1\">Обезвоженность кожи</dt><dd>Недостаток воды в верхнем слое кожи: бывает стянутость и шелушение даже при жирном блеске. Это не то же самое, что обезвоживание всего организма; крем и мягкий уход могут помочь.</dd><dt id=\"dictionary-emollients\" tabindex=\"-1\">Эмоленты</dt><dd>Компоненты крема, которые смягчают кожу и делают её поверхность более гладкой. Это описание состава, а не обязательная новая покупка.</dd><dt id=\"dictionary-occlusive\" tabindex=\"-1\">Окклюзивные компоненты</dt><dd>Компоненты, которые помогают уменьшить потерю воды через кожу. Например, вазелин. Не всем нужен плотный слой; подбирать уход лучше со взрослым.</dd><dt id=\"dictionary-pollen\" tabindex=\"-1\">Пыльца</dt><dd>Мелкие частички растений. У некоторых людей вызывают аллергию. При повторяющемся зуде, чихании или отёке расскажи взрослому, а лечение подбирает врач.</dd><dt id=\"dictionary-irritation\" tabindex=\"-1\">Раздражение кожи</dt><dd>Жжение, краснота или зуд после средства, трения либо других воздействий. Остановись, смой средство при необходимости и сообщи взрослому; при сильной реакции нужна помощь врача.</dd><dt id=\"dictionary-chlorine\" tabindex=\"-1\">Хлорированная вода</dt><dd>Вода бассейна с веществами для обеззараживания. Иногда сушит кожу и волосы. После плавания ополоснись чистой водой и используй привычный уход по потребности.</dd><dt id=\"dictionary-saltwater\" tabindex=\"-1\">Морская вода</dt><dd>Содержит соль. После купания соль лучше смыть чистой пресной водой: она может усиливать сухость и спутывание волос.</dd><dt id=\"dictionary-heatingair\" tabindex=\"-1\">Сухой воздух</dt><dd>Воздух с небольшим количеством влаги. В отопительный сезон бывает особенно сухим; кожа может чувствовать стянутость. Это повод для мягкого ухода, а не частого умывания.</dd><dt id=\"dictionary-humidifier\" tabindex=\"-1\">Увлажнитель воздуха</dt><dd>Прибор, который добавляет влагу в воздух. Не обязателен для ухода. Использует и чистит взрослый по инструкции: грязный прибор может загрязнять воздух.</dd><dt id=\"dictionary-statichair\" tabindex=\"-1\">Статическое электричество</dt><dd>Небольшой электрический заряд: из-за него волосы могут пушиться и тянуться к расчёске или одежде. Сухой воздух и трение усиливают эффект; кондиционер и бережное обращение иногда помогают.</dd><dt id=\"dictionary-friction\" tabindex=\"-1\">Трение</dt><dd>Когда кожа или волосы трутся о ткань, руки или расчёску. Сильное трение может раздражать кожу и повреждать волосы. Промокай полотенцем и распутывай без рывков.</dd></dl></section>"
     }
 ];
 
@@ -1810,12 +1974,38 @@
             localStorage.setItem('currentSeasonTaskKeys', JSON.stringify(seasonTaskKeys));
         }
 
+        function getSeasonDuration(record = null) {
+            if (record && [21,28].includes(record.duration)) return record.duration;
+            const index = record?.index ?? seasonCalendarHistory.find(item=>item.start===record?.start)?.index ?? currentSeasonIndex;
+            return index === 0 ? 21 : 28;
+        }
+        function setCalendarMonthsExpanded(open) {
+            document.getElementById('calendar-months-content').hidden = !open;
+            document.getElementById('calendar-expand-button').setAttribute('aria-expanded',String(open));
+        }
+        function toggleCalendarMonths() {
+            setCalendarMonthsExpanded(document.getElementById('calendar-months-content').hidden);
+        }
+        function showDailyPraise(dateKey) {
+            if (dateKey > calendarTodayKey() || !calendarTaskIds.every(id=>state[dateKey+'_'+id])) return;
+            const shown = JSON.parse(localStorage.getItem('miaPraisedDays') || '{}');
+            if (shown[dateKey]) return;
+            const phrases = ['Ты сегодня нашла время для себя. Это классный шаг, и я тобой горжусь! 🌸','Все шаги дня отмечены! Заметь, сколько ты уже умеешь. Обнимаю — Мия 💜','Сегодня ты позаботилась о себе маленькими шагами. Пусть вечер будет уютным! ✨','Ещё один день практики в твоей копилке! Продолжай в своём темпе 🌱','Ты справилась со своими шагами на сегодня! Теперь можно отдохнуть 🎧'];
+            const index = Math.floor(new Date(dateKey+'T12:00:00').getTime()/86400000) % phrases.length;
+            document.getElementById('daily-praise-text').innerText = phrases[index];
+            document.getElementById('daily-praise-date').innerText = new Date(dateKey+'T12:00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
+            const dialog = document.getElementById('daily-praise-modal');
+            if (!dialog.open) dialog.showModal();
+            shown[dateKey] = true;
+            localStorage.setItem('miaPraisedDays',JSON.stringify(shown));
+        }
+        function closeDailyPraise() { document.getElementById('daily-praise-modal').close(); }
         function getSeasonElapsedDays() {
             return Math.max(0, Math.floor((new Date() - new Date(seasonStartDate)) / (1000 * 60 * 60 * 24)));
         }
 
         function startNextSeason() {
-            if (getSeasonElapsedDays() < 28) return;
+            if (getSeasonElapsedDays() < getSeasonDuration()) return;
             rememberCurrentCalendarSeason();
             currentSeasonIndex = Math.min(currentSeasonIndex + 1, seasons.length - 1);
             seasonStartDate = new Date().toISOString();
@@ -1837,6 +2027,94 @@
         }
 
         let quizAvatarSnippet = userAvatarHTML;
+
+        const bagQuestItems = [
+            {id:'cleanser',name:'Мягкое умывание',detail:'Гель, пенка или молочко',shape:'pump',color:'#93d4ef'},
+            {id:'cream',name:'Крем для лица',detail:'Знакомый увлажняющий крем',shape:'jar',color:'#d8b2f1'},
+            {id:'spf',name:'Солнцезащита SPF 30+',detail:'Широкого спектра',shape:'tube',color:'#ffd36c'},
+            {id:'balm',name:'Бальзам для губ',detail:'Для комфорта при сухости',shape:'stick',color:'#efabc7'},
+            {id:'hands',name:'Крем для рук',detail:'Когда ручки сохнут',shape:'tube',color:'#a8dabd'},
+            {id:'remover',name:'Снятие макияжа',detail:'Подходящее очищение',shape:'bottle',color:'#a6dbe2'},
+            {id:'gloss',name:'Блеск или тинт',detail:'Макияж по желанию',shape:'wand',color:'#f4a5c6'},
+            {id:'mascara',name:'Тушь',detail:'Только твоя, не общая',shape:'wand',color:'#b2a0d7'},
+            {id:'palette',name:'Тени или румяна',detail:'Не обязательная база',shape:'palette',color:'#e7b2c5'},
+            {id:'foundation',name:'Тон или консилер',detail:'Не нужны ради галочки',shape:'pump',color:'#e9c7a4'},
+            {id:'toner',name:'Тоник',detail:'Дополнительное средство',shape:'bottle',color:'#b8d5b4'},
+            {id:'scrub',name:'Скраб или пилинг',detail:'Сначала обсуди со взрослым',shape:'jar',color:'#ecc1a3'},
+            {id:'active',name:'Кислоты / ретиноиды',detail:'Не стартовая база',shape:'dropper',color:'#c8a9df'}
+        ];
+        let bagQuestAge = null;
+        let bagQuestSelection = [];
+        let bagQuestDatesChecked = false;
+        function bagProductPicture(item) {
+            let shape = '';
+            if (item.shape === 'jar') shape = `<rect x="24" y="48" width="62" height="43" rx="12" fill="${item.color}"/><rect x="22" y="38" width="66" height="18" rx="6" fill="#745080"/>`;
+            else if (item.shape === 'palette') shape = `<rect x="14" y="24" width="82" height="74" rx="12" fill="${item.color}"/><rect x="22" y="31" width="66" height="25" rx="5" fill="#eef4ff"/><circle cx="34" cy="76" r="10" fill="#cd6f97"/><circle cx="56" cy="76" r="10" fill="#ddb57e"/><circle cx="78" cy="76" r="10" fill="#a08dbd"/>`;
+            else if (item.shape === 'stick' || item.shape === 'wand') shape = `<rect x="37" y="27" width="36" height="66" rx="7" fill="${item.color}"/><rect x="37" y="18" width="36" height="26" rx="7" fill="#745080"/>`;
+            else if (item.shape === 'tube') shape = `<path d="M29 23 H81 L76 85 H34 Z" fill="${item.color}"/><rect x="34" y="85" width="42" height="14" rx="4" fill="#745080"/>`;
+            else shape = `<rect x="29" y="35" width="52" height="64" rx="13" fill="${item.color}"/><rect x="39" y="20" width="32" height="19" rx="5" fill="#745080"/>${item.shape==='pump'?'<path d="M55 21 V12 H78" fill="none" stroke="#745080" stroke-width="7" stroke-linecap="round"/>':item.shape==='dropper'?'<ellipse cx="55" cy="14" rx="10" ry="12" fill="#745080"/>':''}`;
+            return `<svg viewBox="0 0 110 115" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><ellipse cx="55" cy="104" rx="38" ry="6" fill="#dbc9e9"/>${shape}${item.shape!=='palette'?`<rect x="36" y="55" width="38" height="24" rx="5" fill="#fff9"/><text x="55" y="72" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#654274">${item.id==='spf'?'SPF':'♡'}</text>`:''}</svg>`;
+        }
+        function openBagQuest() {
+            let saved = {};
+            try { saved = JSON.parse(localStorage.getItem('miaBagQuest') || '{}'); } catch (_) {}
+            if (!saved || typeof saved !== 'object') saved = {};
+            bagQuestAge = ['10-11','12-13','14-15'].includes(saved.age) ? saved.age : userAgeGroup;
+            bagQuestSelection = Array.isArray(saved.items) ? saved.items.filter(id=>bagQuestItems.some(item=>item.id===id)) : [];
+            bagQuestDatesChecked = saved.datesChecked === true;
+            document.getElementById('bag-age').value = bagQuestAge;
+            document.getElementById('bag-dates').checked = bagQuestDatesChecked;
+            renderBagItems();
+            showBagStep(1);
+            document.getElementById('bag-quest-modal').showModal();
+        }
+        function closeBagQuest() { document.getElementById('bag-quest-modal').close(); }
+        function showBagStep(step) {
+            for (let i=1;i<=3;i++) document.getElementById('bag-step-'+i).hidden = i!==step;
+            document.getElementById('bag-step-label').innerText = `Шаг ${step} из 3`;
+            document.getElementById('bag-quest-modal').scrollTop = 0;
+        }
+        function saveBagQuestDraft() {
+            localStorage.setItem('miaBagQuest',JSON.stringify({age:bagQuestAge,items:bagQuestSelection,datesChecked:bagQuestDatesChecked}));
+        }
+        function chooseBagAge() {
+            const age = document.getElementById('bag-age').value;
+            if (!['10-11','12-13','14-15'].includes(age)) return;
+            bagQuestAge = age;
+            saveBagQuestDraft();
+            showBagStep(2);
+        }
+        function renderBagItems() {
+            document.getElementById('bag-items').innerHTML = bagQuestItems.map(item=>`<label class="bag-item"><input type="checkbox" ${bagQuestSelection.includes(item.id)?'checked':''} onchange="selectBagItem('${item.id}',this.checked)">${bagProductPicture(item)}<b>${item.name}</b><small>${item.detail}</small></label>`).join('');
+        }
+        function selectBagItem(id,checked) {
+            if (!bagQuestItems.some(item=>item.id===id)) return;
+            bagQuestSelection = bagQuestSelection.filter(item=>item!==id);
+            if (checked) bagQuestSelection.push(id);
+            saveBagQuestDraft();
+        }
+        function buildBagResult(age,items,datesChecked) {
+            const has=id=>items.includes(id);
+            const base=bagQuestItems.filter(item=>['cleanser','cream','spf'].includes(item.id));
+            const present=base.filter(item=>has(item.id));
+            const missing=base.filter(item=>!has(item.id));
+            const ageCopy={
+                '10-11':'🌱 В 10–11 лет начни с мягкого умывания, крема по потребности и защиты от солнца. Бальзам для губ и крем для рук — если сохнут. Макияж для ухода не нужен.',
+                '12-13':'🎧 В 12–13 лет держи простую базу: мягкое очищение, увлажнение по потребности и солнцезащита. Макияж — по желанию и с одобрения родителей; важно уметь его снять.',
+                '14-15':'✨ В 14–15 лет база та же: очищение, увлажнение по потребности и солнцезащита. Макияж можно выбирать по желанию и с одобрения родителей. Больше баночек не значит лучше.'
+            };
+            const makeup=['gloss','mascara','palette','foundation'].some(has);
+            const extra=['active','scrub'].some(has);
+            return `<h3 id="bag-result-title">Ты разобралась в своей косметичке! 💜</h3><section class="bag-result-card"><h4>Что достаточно для начала</h4><p>${ageCopy[age] || ageCopy['12-13']}</p><p>SPF широкого спектра 30+ нужен по солнечной активности; тень и одежда тоже защищают. Средства должны подходить твоей коже — возраст сам по себе этого не гарантирует.</p></section><section class="bag-result-card"><h4>🧴 Что ты уже отметила</h4><p>${present.length?present.map(item=>item.name).join(' · '):'Основу пока не отметила — ничего страшного.'}</p><p>${missing.length?'Обсуди со взрослым: '+missing.map(item=>item.name).join(' · ')+'. Сначала проверь, есть ли подходящее средство дома — отдельная покупка не обязательна.':'Три базовых средства отмечены. Если они подходят коже, расширять набор ради количества не нужно.'}</p></section>${makeup?`<section class="bag-result-card"><h4>💄 Если хочется макияж</h4><p>${has('remover')?'Ты отметила средство для снятия макияжа. Используй по инструкции, затем мягко очисти лицо.':'Ты отметила макияж. Со взрослым проверь, чем его правильно снимать: иногда подходит уже имеющееся очищение, для стойкого макияжа может понадобиться отдельное средство.'} Не делись тушью и средствами для губ. Тон и палетка не обязательны.</p></section>`:''}${extra?'<section class="bag-result-card"><h4>👩‍👧 Эти баночки обсудим вместе</h4><p>Кислоты, ретиноиды, скрабы и пилинги не нужны для стартовой базы. Не начинай и не сочетай их сама. Если средство назначил врач, следуй его инструкции вместе со взрослым.</p></section>':''}<section class="bag-result-card"><h4>🔎 Последняя проверка</h4><p>${datesChecked?'Ты отметила проверку сроков — отличный навык!':'Проверь со взрослым срок годности и значок 6M / 12M: сколько средство хранится после открытия.'} Изменился запах, цвет или текстура? Отложи средство и покажи взрослому. При жжении или сыпи остановись и расскажи взрослому.</p></section><p class="mia-tip">🌸 Это разбор, а не оценка красоты и не список покупок. Пустая косметичка — тоже нормальный старт! Выбор сохранён только в этом браузере. При стойких проблемах кожи помогает врач.</p>`;
+        }
+        function finishBagQuest() {
+            bagQuestDatesChecked = document.getElementById('bag-dates').checked;
+            saveBagQuestDraft();
+            document.getElementById('bag-result').innerHTML = buildBagResult(bagQuestAge,bagQuestSelection,bagQuestDatesChecked);
+            showBagStep(3);
+            document.getElementById('bag-quest-scroll').scrollTop=0;
+        }
+        function bagQuestAdvice(id) { closeBagQuest();openMiaAdvice(id); }
 
         function init() {
             Object.keys(avatarImages).forEach(key => {
@@ -1863,7 +2141,32 @@
             renderAdviceCards();
             setupMobileApp();
 
-            if (!isWelcomeCompleted) openWelcomeModal();
+            updateOnboardingPresentation();
+        }
+
+        let onboardingExpanded = false;
+        function isBeautyBaseSaved() {
+            return localStorage.getItem('miaBeautyBaseSaved') === 'true' || ['skinType','hairType','nailType'].every(key => localStorage.getItem(key) !== null);
+        }
+        function updateOnboardingPresentation() {
+            const complete = isWelcomeCompleted && isBeautyBaseSaved();
+            if (complete) localStorage.setItem('miaOnboardingCompleted','true');
+            const visible = !complete || onboardingExpanded;
+            document.getElementById('mia-onboarding-panel').hidden = !visible;
+            document.getElementById('onboarding-toggle').setAttribute('aria-expanded',String(visible));
+            document.getElementById('onboarding-progress').innerText = complete ? 'Всё сохранено 💜 Можно менять настройки, когда захочешь.' : !isWelcomeCompleted ? 'Начни с имени и образа. Затем выбери свою бьюти-базу.' : 'Имя и образ готовы. Осталось сохранить бьюти-базу.';
+        }
+        function toggleOnboardingPanel() {
+            onboardingExpanded = !onboardingExpanded;
+            updateOnboardingPresentation();
+            if (!document.getElementById('mia-onboarding-panel').hidden) document.getElementById('mia-onboarding-panel').scrollIntoView({behavior:'smooth',block:'start'});
+        }
+        function finishOnboarding() {
+            if (!isWelcomeCompleted) { openWelcomeModal(); return; }
+            if (!isBeautyBaseSaved()) { openMiaHelp('setup'); return; }
+            onboardingExpanded = false;
+            updateOnboardingPresentation();
+            document.getElementById('season-calendar-section').scrollIntoView({behavior:'smooth',block:'start'});
         }
 
         function openWelcomeModal() {
@@ -1925,21 +2228,65 @@
             const level = miaAgeLevels[userAgeGroup] || miaAgeLevels['12-13'];
             document.getElementById('rec-modal-emoji').innerText = level.icon;
             document.getElementById('rec-modal-title').innerText = level.title;
-            document.getElementById('rec-modal-text').innerHTML = `<p>${level.intro}</p><ul class="age-level-notes">${level.notes.map(note => `<li>${note}</li>`).join('')}</ul><p class="age-level-pep"><b>Мия на твоей стороне:</b> ${level.pep}</p><button type="button" class="mia-feature-action" onclick="closeAgeRecModal();openMiaAdvice('sleep')">Мия, расскажи о сне 🌙</button>`;
+            const icons = ['🧴', userAgeGroup === '14-15' ? '💄' : '🪮','🌙'];
+            document.getElementById('rec-modal-text').innerHTML = `<p class="rec-intro">${level.intro}</p><ul class="age-level-notes">${level.notes.map((note,index) => `<li><span aria-hidden="true">${icons[index] || '💜'}</span><span>${note}</span></li>`).join('')}</ul><p class="age-level-pep"><b>💜 Мия рядом:</b> ${level.pep}</p><button type="button" id="hair-frequency-button" class="rec-action" onclick="toggleHairFrequency()" aria-expanded="false" aria-controls="hair-frequency-panel">🚿 Как часто мыть волосы?</button><section id="hair-frequency-panel" class="hair-frequency-panel" hidden><h4>Смотри на корни, а не на календарь 🫧</h4><p>Мой голову, когда корни жирные или кожа головы загрязнилась. Тип волос — подсказка, а не строгое расписание.</p>${renderHairFrequency()}<p class="hair-frequency-note">👩‍👧 Кудри, сухая длина и жирные корни могут сочетаться. Выбирай шампунь со взрослым. Если есть зуд, ранки или сильная перхоть — расскажи взрослому и обратитесь к врачу.</p><button type="button" class="rec-action rec-action-soft" onclick="openAdviceFromRecommendations('hairwash')">🫧 Как правильно мыть голову</button></section><button type="button" class="rec-action rec-action-soft" onclick="openAdviceFromRecommendations('sleep')">🌙 Как наладить сон</button>`;
             document.getElementById('age-rec-modal').classList.remove('hidden');
+        }
+        let recommendationsAdviceId = null;
+        let recommendationsHairOpen = false;
+        function openAdviceFromRecommendations(id) {
+            if (!adviceSections.some(section => section.id === id)) return;
+            recommendationsHairOpen = !document.getElementById('hair-frequency-panel').hidden;
+            if (recommendationsAdviceId) {
+                document.getElementById('rec-return-'+recommendationsAdviceId).hidden = true;
+                document.getElementById('rec-return-bottom-'+recommendationsAdviceId).hidden = true;
+            }
+            recommendationsAdviceId = id;
+            closeAgeRecModal();
+            openMiaAdvice(id);
+            document.getElementById('rec-return-'+id).hidden = false;
+            document.getElementById('rec-return-bottom-'+id).hidden = false;
+            document.getElementById('rec-return-'+id).focus({preventScroll:true});
+        }
+        function returnToRecommendations() {
+            if (recommendationsAdviceId) {
+                document.getElementById('rec-return-'+recommendationsAdviceId).hidden = true;
+                document.getElementById('rec-return-bottom-'+recommendationsAdviceId).hidden = true;
+            }
+            recommendationsAdviceId = null;
+            openAgeRecModal();
+            if (recommendationsHairOpen) {
+                document.getElementById('hair-frequency-panel').hidden = false;
+                document.getElementById('hair-frequency-button').setAttribute('aria-expanded','true');
+            }
+            document.getElementById('hair-frequency-button').focus({preventScroll:true});
+        }
+        function renderHairFrequency() {
+            const types = [
+                {id:'greasy',icon:'🫧',title:'Корни быстро жирнятся',text:'Мой, когда корни стали жирными. Некоторым нужно каждый день или через день — это нормально. Выбирай мягкий шампунь.'},
+                {id:'curly',icon:'🌀',title:'Волны или кудри',text:'Мой по загрязнению кожи головы. Если корни чистые и тебе комфортно, мыть каждый день не нужно. Кондиционер наноси на длину.'},
+                {id:'dry',icon:'🌼',title:'Сухая длина',text:'Сухие кончики не значит, что голову нельзя мыть. Мой, когда загрязнились корни. Шампунь — на кожу головы, кондиционер — на длину.'}
+            ];
+            return types.map(type => `<article class="hair-frequency-type ${hairType === type.id ? 'hair-frequency-selected' : ''}"><h5>${type.icon} ${type.title}${hairType === type.id ? ' · твой выбор' : ''}</h5><p>${type.text}</p></article>`).join('');
+        }
+        function toggleHairFrequency() {
+            const panel = document.getElementById('hair-frequency-panel');
+            panel.hidden = !panel.hidden;
+            document.getElementById('hair-frequency-button').setAttribute('aria-expanded',String(!panel.hidden));
+            if (!panel.hidden) panel.scrollIntoView({behavior:'smooth',block:'nearest'});
         }
         function closeAgeRecModal() { document.getElementById('age-rec-modal').classList.add('hidden'); }
 
         function openSeasonModal() {
             const elapsedDays = getSeasonElapsedDays();
-            const diffDays = Math.min(28, elapsedDays + 1);
+            const diffDays = Math.min(getSeasonDuration(), elapsedDays + 1);
             const season = seasons[currentSeasonIndex];
             document.getElementById('season-summary-icon').innerText = season.icon;
             document.getElementById('season-summary-name').innerText = `Уровень ${currentSeasonIndex + 1}: ${season.name}`;
             renderFinalQuestCard();
             const nextButton = document.getElementById('next-season-btn');
-            nextButton.classList.toggle('hidden', elapsedDays < 28);
-            document.getElementById('season-knowledge-btn').classList.toggle('hidden', elapsedDays < 28);
+            nextButton.classList.toggle('hidden', elapsedDays < getSeasonDuration());
+            document.getElementById('season-knowledge-btn').classList.toggle('hidden', elapsedDays < getSeasonDuration());
             nextButton.innerText = currentSeasonIndex < seasons.length - 1
                 ? 'Начать следующий сезон ✨' : 'Повторить финальный сезон ✨';
             let seasonTasks = parseInt(localStorage.getItem('currentSeasonTasksCompleted')) || 0;
@@ -1951,7 +2298,7 @@
             const diplomaEl = document.getElementById('diploma-container');
             const lockedEl = document.getElementById('diploma-locked-msg');
 
-            if (elapsedDays >= 28) {
+            if (elapsedDays >= getSeasonDuration()) {
                 diplomaEl.classList.remove('hidden');
                 lockedEl.classList.add('hidden');
             } else {
@@ -1991,9 +2338,12 @@
             localStorage.setItem('userAvatarHTML', userAvatarHTML);
             localStorage.setItem('userAgeGroup', userAgeGroup);
             localStorage.setItem('isWelcomeCompleted', 'true');
+            isWelcomeCompleted = true;
             
             updateUserIdentityDisplay();
             closeWelcomeModal();
+            updateOnboardingPresentation();
+            if (!isBeautyBaseSaved()) openMiaHelp('setup');
         }
 
         function updateUserIdentityDisplay() {
@@ -2003,30 +2353,25 @@
             document.getElementById('display-age-badge').innerText = level.icon + ' ' + level.title;
         }
 
-        function getMiaWhisper(date = new Date(), seasonIndex = currentSeasonIndex) {
-            const messages = seasons[seasonIndex].whispers;
-            const localDay = Math.floor(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) / (1000 * 60 * 60 * 24));
-            return 'Мия шепчет: ' + messages[((localDay % messages.length) + messages.length) % messages.length];
-        }
 
         function updateSeasonDisplay() {
             const season = seasons[currentSeasonIndex];
+            document.getElementById('season-duration-counter').innerText = getSeasonDuration();
             document.getElementById('current-season-name').innerText = season.name;
             document.getElementById('current-season-icon').innerText = season.icon;
-            document.getElementById('display-custom-advice').innerText = getMiaWhisper();
             
             const diffDays = getSeasonElapsedDays() + 1;
-            document.getElementById('season-day-counter').innerText = Math.min(28, diffDays);
+            document.getElementById('season-day-counter').innerText = Math.min(getSeasonDuration(), diffDays);
             renderFinalQuestCard();
             renderSeasonCalendar();
         }
 
         function updateMonthProgress() {
-            const diffDays = Math.min(28, getSeasonElapsedDays());
-            const monthPercent = Math.round((diffDays / 28) * 100);
+            const diffDays = Math.min(getSeasonDuration(), getSeasonElapsedDays());
+            const monthPercent = Math.round((diffDays / getSeasonDuration()) * 100);
             document.getElementById('month-progress-bar').style.width = `${monthPercent}%`;
             document.getElementById('month-progress-text').innerText = `${monthPercent}%`;
-            document.getElementById('month-days-left').innerText = `${28 - diffDays} дн. осталось`;
+            document.getElementById('month-days-left').innerText = `${getSeasonDuration() - diffDays} дн. осталось`;
         }
 
         function updateHairScheduleDisplay() {
@@ -2046,9 +2391,11 @@
                         <span id="icon-${sec.id}" class="text-sm font-bold text-purple-600 transition-transform">▼</span>
                     </button>
                     <div id="content-${sec.id}" class="hidden p-4 pt-0 text-xs text-gray-700 leading-relaxed border-t border-purple-50 space-y-2">
+                        <button type="button" id="rec-return-${sec.id}" class="rec-action rec-action-soft" hidden onclick="returnToRecommendations()">← РЕКОМЕНДАЦИИ ДЛЯ ТЕБЯ</button>
                         ${sec.id === 'hairdry' ? `<figure class="procedure-figure"><div class="procedure-art procedure-hairtowel" role="img" aria-label="Мягко промокни волосы полотенцем перед сушкой"></div><figcaption>Сначала убери лишнюю воду, не растирая волосы.</figcaption></figure>` : ''}
                         ${sec.id !== 'dictionary' ? `<figure class="procedure-figure"><div class="procedure-art procedure-${sec.art || sec.id}" role="img" aria-label="${sec.title}"></div><figcaption>Уход шаг за шагом — попробуй вместе со взрослым 💜</figcaption></figure>` : ''}
                         ${sec.content}
+                        <button type="button" id="rec-return-bottom-${sec.id}" class="rec-action rec-action-soft" hidden onclick="returnToRecommendations()">← Вернуться к рекомендациям</button>
                         <button type="button" class="mia-share-advice" onclick="shareAdvice('${sec.id}')">💌 Отправить подруге</button>
                     </div>
                 </div>
@@ -2128,7 +2475,7 @@
         }
 
         function shareDailyAdvice() {
-            return shareMiaContent('Подсказка дня от Мии ✨', getMiaWhisper());
+            return shareMiaContent('Подсказка дня от Мии ✨', getDailyEncouragement());
         }
 
         function shareAdvice(id) {
@@ -2162,7 +2509,7 @@
             renderChecklists();
         }
 
-        function saveAndHideSetup() { updateProfile(); closeMiaHelp('setup'); }
+        function saveAndHideSetup() { updateProfile(); localStorage.setItem('miaBeautyBaseSaved','true'); closeMiaHelp('setup'); updateOnboardingPresentation(); }
         function hideInstruction() { closeMiaHelp('guide'); }
 
         function renderDaysTabs() { renderSeasonCalendar(); }
@@ -2177,16 +2524,16 @@
 
         function renderChecklists() {
             const morningTasks = [
-                { id: 'm_face', text: skinData[skinType].m },
-                { id: 'm_hair', text: '🪮 Утреннее аккуратное расчесывание' },
-                { id: 'm_water', text: '💧 Вода по потребности — вспомнить о питьевом режиме' }
+                { id: 'm_face', text: '🧴 Умойся, увлажни, защити' },
+                { id: 'm_hair', text: '🪮 Распутай волосы бережно' },
+                { id: 'm_water', text: '💧 Попей по жажде' }
             ];
 
             const eveningTasks = [
-                { id: 'e_face', text: skinData[skinType].e },
-                { id: 'e_hair', text: '🪮 Расчесывание волос на ночь' },
-                { id: 'e_nail', text: `💅 ${nailData[nailType].task}` },
-                { id: 'e_sleep', text: '🌙 Подготовиться ко сну: спокойный вечер и привычное время' }
+                { id: 'e_face', text: '🧴 Умойся, увлажни лицо' },
+                { id: 'e_hair', text: '🪮 Бережно распутай волосы' },
+                { id: 'e_nail', text: nailType === 'cuticle' ? '💅 Нанеси масло, крем' : '💅 Увлажни руки кремом' },
+                { id: 'e_sleep', text: '🌙 Подготовься ко сну' }
             ];
 
             document.getElementById('morning-container').innerHTML = morningTasks.map(t => createTaskHTML(t)).join('');
@@ -2198,15 +2545,27 @@
             const future = currentDateKey > calendarTodayKey();
             const checked = !future && state[key] ? 'checked' : '';
             const help = {
-                m_face: ['face','spf','Как умываться и наносить SPF','SPF'],
-                e_face: ['face','cream','Вечерний уход шаг за шагом','Увлажняющий крем'],
-                m_hair: ['brushes','comb','Как выбрать расчёску и распутать волосы','Расчёска'],
-                e_hair: ['hair','comb','Как бережно обращаться с волосами','Расчёска'],
-                m_water: ['habits','water','Вода и привычки без строгих правил','Питьевой режим'],
-                e_nail: ['nails','cuticle','Уход за руками и ногтями','Кутикула'],
-                e_sleep: ['sleep','sleep','Почему сон важен и как подготовиться','Гигиена сна']
+                m_face: [['face','Умывание и крем'],['towels','Полотенце и повязка'],['lips','Бальзам для губ'],['pimplecare','Если появился прыщик']],
+                e_face: [['face','Вечернее очищение'],['towels','Чистое полотенце'],['makeupmistakes','Как снять макияж'],['cosmetics','Выбор средств'],['cosmeticdates','Сроки годности']],
+                m_hair: [['brushes','Выбор расчёски'],['ties','Выбор резинки'],['tiescare','Причёска без натяжения'],['winterhair','Шапка зимой']],
+                e_hair: [['brushes','Как распутать волосы'],['hairwash','Мытьё по потребности'],['hairdry','Бережная сушка'],['hottools','Фен и плойка'],['styling','Средства для укладки'],['curlers','Выбор бигуди']],
+                m_water: [['habits','Вода и привычки'],['sportscare','Уход после спорта']],
+                e_nail: [['hands','Крем для рук'],['nails','Уход за ногтями'],['nailbiting','Если грызёшь ногти'],['winterhands','Перчатки в холод']],
+                e_sleep: [['sleep','Сон и вечерний ритуал'],['habits','Маленькие привычки'],['hairdry','Если волосы мокрые']]
             }[task.id];
-            return `<div class="task-with-help"><label class="flex items-center gap-2 p-2.5 rounded-xl bg-white/90 hover:bg-white cursor-pointer border shadow-sm"><input type="checkbox" ${checked} ${future ? 'disabled' : ''} onchange="toggleTask('${key}')" class="w-4 h-4 accent-purple-600 rounded cursor-pointer"><span class="text-xs font-semibold ${checked ? 'line-through text-gray-400' : ''}">${task.text}</span></label><div class="task-hints"><a href="#content-${help[0]}" onclick="openMiaAdvice('${help[0]}');return false;">Мия: ${help[2]} →</a><a href="#dictionary-${help[1]}" onclick="openMiaDictionary('${help[1]}');return false;">Словарь: ${help[3]} →</a></div></div>`;
+            const seasonal = seasonalTaskTip(task.id,currentDateKey);
+            if (!['winter','autumn'].includes(seasonal.season.id)) {
+                for (let i=help.length-1;i>=0;i--) if (['winterhair','winterhands'].includes(help[i][0])) help.splice(i,1);
+            }
+            help.push(['care-'+seasonal.season.id,seasonal.season.name+' — уход по погоде']);
+            const dictionary = {
+                m_face: ['spf','SPF'], e_face: ['cream','Увлажняющий крем'],
+                m_hair: ['comb','Расчёска'], e_hair: ['comb','Расчёска'],
+                m_water: ['water','Питьевой режим'], e_nail: ['cuticle','Кутикула'], e_sleep: ['sleep','Гигиена сна']
+            }[task.id];
+            const note = task.id === 'm_face' ? skinData[skinType].m : task.id === 'e_face' ? skinData[skinType].e : task.id === 'e_nail' ? nailData[nailType].task : task.id === 'e_hair' || task.id === 'm_hair' ? 'Кудри распутывай влажными с кондиционером: сухую расчёску можно пропустить. Мытьё и укладка — только по потребности, впервые с горячими приборами помогает взрослый.' : task.id === 'm_water' ? 'Пей по жажде, без соревнований и обязательного числа стаканов.' : 'Отложи экран, приглуши свет и начни спокойный вечерний ритуал. Для 13–18 лет ориентир — 8–10 часов сна, для 10–12 лет — 9–12 часов.';
+            const links = help.map(([id,title]) => `<a href="#content-${id}" onclick="openMiaAdvice('${id}');return false;">Мия: ${title} →</a>`).join('');
+            return `<div class="task-with-help"><label class="flex items-center gap-2 p-2.5 rounded-xl bg-white/90 hover:bg-white cursor-pointer border shadow-sm"><input type="checkbox" ${checked} ${future ? 'disabled' : ''} onchange="toggleTask('${key}')" class="w-4 h-4 accent-purple-600 rounded cursor-pointer"><span class="text-xs font-semibold ${checked ? 'line-through text-gray-400' : ''}">${task.text}</span></label><p class="season-task-tip"><b>${seasonal.season.name}:</b> ${seasonal.text}</p><details class="task-care-guide"><summary>Как делать? Советы Мии · ${help.length}</summary><p class="task-care-note">${note}</p><div class="task-hints">${links}<a href="#dictionary-${dictionary[0]}" onclick="openMiaDictionary('${dictionary[0]}');return false;">Словарь: ${dictionary[1]} →</a></div></details></div>`;
         }
 
         function toggleTask(key) {
@@ -2237,6 +2596,7 @@
             updateProgress();
             updateStats();
             renderChecklists();
+            if (!wasChecked && state[key]) showDailyPraise(key.slice(0,10));
         }
 
         function updateProgress() {
