@@ -1028,6 +1028,8 @@
         }
 
         const intakeService = { endpoint: 'https://formsubmit.co/ajax/art@marina-vorontsova.ru', recipient: 'art@marina-vorontsova.ru' };
+        const feedbackEndpoint = 'https://sbor-otzyvov-bca0fcee.ezhgenti.ru/api/contact';
+        let feedbackPayload = null;
         let requestContactEmail = '';
         const intakeBusy = { feedback:false, request:false };
         const intakeSentDrafts = { feedback:'', request:'' };
@@ -1042,7 +1044,7 @@
             if (!['feedback','request'].includes(kind) || intakeBusy[kind]) return;
             const feedback = kind === 'feedback';
             const draft = feedback ? feedbackDraft : projectRequestDraft;
-            if (!draft) return;
+            if (!draft || (feedback && !feedbackPayload)) return;
             const button = document.getElementById(feedback ? 'feedback-send' : 'project-request-send');
             const status = document.getElementById(feedback ? 'feedback-send-status' : 'project-request-send-status');
             if (intakeSentDrafts[kind] === draft) { status.innerText = 'Это сообщение уже отправлено 💜'; return; }
@@ -1060,20 +1062,21 @@
                 _url: shareAppUrl
             };
             if (!feedback) payload.email = requestContactEmail;
+            const submissionPayload = feedback ? { ...feedbackPayload } : payload;
             const controller = typeof AbortController === 'function' ? new AbortController() : null;
             let timeout = null;
             if (controller && typeof setTimeout === 'function') timeout = setTimeout(() => controller.abort(), 20000);
             try {
-                const response = await fetch(intakeService.endpoint, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(payload), ...(controller ? {signal:controller.signal} : {}) });
+                const response = await fetch(feedback ? feedbackEndpoint : intakeService.endpoint, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(submissionPayload), ...(controller ? {signal:controller.signal} : {}) });
                 const result = await response.json();
                 const awaitingActivation = /activat|confirm.*email|verify.*email/i.test(String(result.message || ''));
-                if (awaitingActivation) {
+                if (!feedback && awaitingActivation) {
                     status.innerText = 'Автоматическая доставка ждёт подтверждения почты автором. Сейчас можно отправить подготовленный текст через свою почту.';
                     button.disabled = false;
                     button.innerText = feedback ? 'Повторить отправку отзыва' : 'Повторить отправку заявки';
                     return;
                 }
-                if (!response.ok || !(result.success === true || result.success === 'true')) throw new Error('Not accepted');
+                if (!response.ok || !(feedback ? result.ok === true : (result.success === true || result.success === 'true'))) throw new Error('Not accepted');
                 intakeSentDrafts[kind] = draft;
                 if ((feedback ? feedbackDraft : projectRequestDraft) !== draft) {
                     status.innerText = 'Предыдущее сообщение принято сервисом. Новый текст ещё не отправлен.';
@@ -1081,7 +1084,7 @@
                     button.innerText = feedback ? 'Отправить отзыв автору 💌' : 'Отправить заявку автору ✉️';
                     return;
                 }
-                status.innerText = 'Сервис принял сообщение для доставки автору. Спасибо! 💜';
+                status.innerText = feedback ? 'Сборщик принял отзыв. Спасибо! 💜' : 'Сервис принял сообщение для доставки автору. Спасибо! 💜';
                 button.innerText = 'Сообщение принято ✓';
                 button.disabled = true;
             } catch {
@@ -1491,6 +1494,16 @@
             const form = document.getElementById('feedback-form');
             if (!form.reportValidity()) return;
             const fields = new FormData(form);
+            feedbackPayload = {
+                score: Number(fields.get('rating')),
+                who: String(fields.get('role') || ''),
+                easy: String(fields.get('ease') || ''),
+                liked: fields.getAll('liked').join(', '),
+                unclear: String(fields.get('difficulty') || '').trim(),
+                add: String(fields.get('missing') || '').trim(),
+                recommend: String(fields.get('recommend') || ''),
+                free: String(fields.get('comment') || '').trim()
+            };
             feedbackDraft = ['Отзыв о приложении «Сияй!»',
                 'Общая оценка: ' + fields.get('rating') + '/5',
                 'Отзыв оставляет: ' + (fields.get('role') || 'не указано'),

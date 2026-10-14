@@ -16,7 +16,9 @@ python3 -m http.server 3000 --directory dist
 
 ## Сбор отзывов и заявок
 
-Формы отправляются из браузера через FormSubmit на `art@marina-vorontsova.ru`.
+Отзывы отправляются из браузера на `https://sbor-otzyvov-bca0fcee.ezhgenti.ru/api/contact`. Поля: `score`, `who`, `easy`, `liked`, `unclear`, `add`, `recommend`, `free`. Подтверждением принятия считается HTTP 2xx с JSON `{"ok":true}`. Сборщик должен разрешать CORS для домена «Сияй» и обрабатывать OPTIONS. Telegram подключается на стороне платформы сборщика; токен не должен попадать в браузер или Git. Живая отправка в сборщик пока не проверена из-за сетевого ограничения среды.
+
+Заявки отправляются из браузера через FormSubmit на `art@marina-vorontsova.ru`.
 Endpoint: `https://formsubmit.co/ajax/art@marina-vorontsova.ru`.
 
 Для первого подключения автору нужно:
