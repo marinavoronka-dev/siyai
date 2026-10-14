@@ -531,7 +531,7 @@
             <label for="feedback-missing">6. Какие темы или функции добавить?</label><textarea id="feedback-missing" name="missing" rows="2" maxlength="500" placeholder="Твоя идея может стать следующим обновлением ✨"></textarea>
             <label for="feedback-recommend">7. Порекомендуешь приложение подруге? *</label><select id="feedback-recommend" name="recommend" required><option value="">Выбери вариант</option><option>Да</option><option>Возможно, после доработок</option><option>Пока нет</option><option>Ещё не решила</option></select>
             <label for="feedback-comment">8. Что ещё хочется сказать?</label><textarea id="feedback-comment" name="comment" rows="2" maxlength="500"></textarea><button type="submit" class="mia-welcome-done">Подготовить мой отзыв ✍️</button></form>
-            <div id="feedback-preview" class="prepared-preview" hidden><h3>Твой отзыв готов к отправке</h3><textarea id="feedback-text" readonly rows="10" aria-label="Подготовленный отзыв"></textarea><p>Проверь отзыв. Кнопка «Отправить отзыв автору» передаст этот текст через FormSubmit на <b>art@marina-vorontsova.ru</b>. Имя и контакты для отзыва не нужны. Сообщение отправляется только после твоего нажатия; ниже есть запасной вариант через собственную почту.</p><button type="button" id="feedback-send" class="mia-welcome-done" onclick="submitCollectedForm('feedback')">Отправить отзыв автору 💌</button><p id="feedback-send-status" role="status" aria-live="polite"></p><div class="mia-social-actions"><button type="button" onclick="copyPreparedText('feedback')">Скопировать отзыв</button><a id="feedback-email" href="mailto:art@marina-vorontsova.ru">Отправить отзыв на почту ✉️</a></div><p id="feedback-copy-status" role="status" aria-live="polite"></p></div></div>
+            <div id="feedback-preview" class="prepared-preview" hidden><h3>Твой отзыв готов к отправке</h3><textarea id="feedback-text" readonly rows="10" aria-label="Подготовленный отзыв"></textarea><p>Проверь отзыв. Кнопка «Отправить отзыв автору» передаст твои ответы в сборщик отзывов «Сияй». Имя и контакты для отзыва не нужны. Сообщение отправляется только после твоего нажатия; ниже есть запасной вариант через собственную почту.</p><button type="button" id="feedback-send" class="mia-welcome-done" onclick="submitCollectedForm('feedback')">Отправить отзыв автору 💌</button><p id="feedback-send-status" role="status" aria-live="polite"></p><div class="mia-social-actions"><button type="button" onclick="copyPreparedText('feedback')">Скопировать отзыв</button><a id="feedback-email" href="mailto:art@marina-vorontsova.ru">Отправить отзыв на почту ✉️</a></div><p id="feedback-copy-status" role="status" aria-live="polite"></p></div></div>
         </dialog>
 
         <dialog id="final-quest-modal" class="mia-help-dialog" aria-labelledby="final-quest-title" onclick="if(event.target === this) closeFinalQuest()">
@@ -1497,12 +1497,12 @@
             feedbackPayload = {
                 score: Number(fields.get('rating')),
                 who: String(fields.get('role') || ''),
-                easy: String(fields.get('ease') || ''),
+                easy: { 'Всё понятно': 5, 'Понадобились подсказки': 3, 'Было сложно': 1 }[fields.get('ease')],
                 liked: fields.getAll('liked').join(', '),
                 unclear: String(fields.get('difficulty') || '').trim(),
                 add: String(fields.get('missing') || '').trim(),
-                recommend: String(fields.get('recommend') || ''),
-                free: String(fields.get('comment') || '').trim()
+                recommend: { 'Да': 5, 'Возможно, после доработок': 3, 'Пока нет': 1, 'Ещё не решила': 3 }[fields.get('recommend')],
+                free: ['Понятность: ' + fields.get('ease'), 'Рекомендация: ' + fields.get('recommend'), String(fields.get('comment') || '').trim()].filter(Boolean).join('\n')
             };
             feedbackDraft = ['Отзыв о приложении «Сияй!»',
                 'Общая оценка: ' + fields.get('rating') + '/5',
