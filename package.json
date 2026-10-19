@@ -1,7 +1,9 @@
 {
-  "name": "siyai-preview",
+  "name": "siyai-app",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "python3 -m http.server 3000 --bind 0.0.0.0 --directory dist"
+    "build": "node scripts/build-server.mjs",
+    "test:server": "node tests/server.test.mjs"
   }
 }

@@ -1,0 +1,22 @@
+import { readFile,writeFile,mkdir,cp,rm } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+const root=path.resolve(fileURLToPath(new URL('..',import.meta.url)));
+const manifest=JSON.parse(await readFile(path.join(root,'.openai/hosting.json'),'utf8'));
+if(manifest.static)throw Error('Worker manifest must not declare static hosting');
+const source=await readFile(path.join(root,'server/worker.mjs'),'utf8');
+const author=await readFile(path.join(root,'server/author.html'),'utf8'),script=await readFile(path.join(root,'server/author.js'),'utf8');
+const worker=source.replace("'__AUTHOR_HTML__'",JSON.stringify(author)).replace("'__AUTHOR_JS__'",JSON.stringify(script));
+await import('data:text/javascript;base64,'+Buffer.from(worker).toString('base64'));
+await rm(path.join(root,'dist'),{recursive:true,force:true});
+await mkdir(path.join(root,'dist/server'),{recursive:true});
+await mkdir(path.join(root,'dist/.openai'),{recursive:true});
+await cp(path.join(root,'web'),path.join(root,'dist/client'),{recursive:true});
+// Retain the standalone HTML path used by existing functional checks.
+await cp(path.join(root,'web/index.html'),path.join(root,'dist/index.html'));
+await cp(path.join(root,'.openai/hosting.json'),path.join(root,'dist/.openai/hosting.json'));
+await cp(path.join(root,'drizzle'),path.join(root,'dist/drizzle'),{recursive:true});
+await writeFile(path.join(root,'dist/server/index.js'),worker);
+const config={name:'siyai-forms',main:'index.js',compatibility_date:'2026-10-01',assets:{directory:'../client',binding:'ASSETS',run_worker_first:true},d1_databases:[{binding:'DB',database_name:'siyai-forms',database_id:'local-preview',migrations_dir:'../drizzle'}]};
+await writeFile(path.join(root,'dist/server/wrangler.json'),JSON.stringify(config,null,2)+'\n');
+console.log('Built Worker, static assets, author cabinet and schema migrations.');
