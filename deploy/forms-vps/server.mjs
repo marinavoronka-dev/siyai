@@ -58,7 +58,12 @@ const server=createServer(async(req,res)=>{
   const path=new URL(req.url,'http://localhost').pathname;
   if(path==='/health'&&req.method==='GET')return send(res,storageFailed?503:200,{ok:!storageFailed});
   if(!['/api/forms/challenge','/api/forms','/api/contact','/api/lead'].includes(path))bad('not_found',404);
-  if(req.headers.origin!==origin && !(req.method==='GET'&&!req.headers.origin&&req.headers['sec-fetch-site']==='same-origin'))bad('origin',403);
+  let sameOriginGet=false;
+  if(req.method==='GET'&&!req.headers.origin){
+   try{sameOriginGet=new URL(req.headers.referer).origin===origin;}catch{}
+   sameOriginGet ||= req.headers['sec-fetch-site']==='same-origin';
+  }
+  if(req.headers.origin!==origin&&!sameOriginGet)bad('origin',403);
   // Bound to loopback; Nginx must overwrite X-Real-IP, never append user input.
   const client=mac(String(req.headers['x-real-ip']||req.socket.remoteAddress));
   const now=Date.now();for(const [key,v]of throttle)if(v.until<now)throttle.delete(key);

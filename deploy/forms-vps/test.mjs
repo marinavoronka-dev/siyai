@@ -19,6 +19,8 @@ test('VPS API persists native and legacy forms, rejects spoofing, and survives r
  const request=async(path,data,extra={})=>{const r=await fetch(url+path,{method:data?'POST':'GET',headers:{Origin:origin,'X-Real-IP':'203.0.113.1',...(data?{'Content-Type':'application/json'}:{}),...extra},...(data?{body:JSON.stringify(data)}:{})});return {status:r.status,data:await r.json()};};
  try{
   assert.equal((await request('/api/forms/challenge',null,{Origin:'http://evil.invalid'})).status,403);
+  const httpGet=await fetch(url+'/api/forms/challenge',{headers:{Referer:origin+'/'}});assert.equal(httpGet.status,200,'HTTP browsers may omit Origin and Sec-Fetch headers');
+  assert.equal((await fetch(url+'/api/forms/challenge')).status,403);
   const challenge=await request('/api/forms/challenge');assert.equal(challenge.status,200);
   const payload={kind:'feedback',message:'Пробный отзыв 💜',website:'',submissionId:randomUUID(),challenge:challenge.data.token};
   assert.equal((await request('/api/forms',payload)).status,400,'too fast');
