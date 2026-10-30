@@ -451,11 +451,11 @@
         .profile-picture-wrap { position:relative; }
         .personal-beauty-card .profile-card-avatar { position:absolute; top:10px; left:4%; width:16%; aspect-ratio:1; object-fit:cover; border-radius:18px; box-shadow:none; }
 
-        .rec-round-launcher { display:flex; flex-direction:column; align-items:center; gap:5px; flex-shrink:0; width:104px; }
-        .beauty-level-button { width:88px; height:88px; min-height:88px; padding:8px; border-radius:50%; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:0 6px 16px #60277730; }
-        .beauty-level-button .rec-round-icon { font-size:30px; margin:0; }
-        .beauty-level-button span { font-size:14px; margin:0; }
-        .rec-round-caption { font-size:14px; line-height:1.25; text-align:center; font-weight:800; }
+        .rec-round-launcher { display:flex; flex-direction:column; align-items:center; gap:8px; flex-shrink:0; width:112px; max-width:100%; }
+        .beauty-level-button { box-sizing:border-box; width:100%; height:auto; min-height:76px; padding:12px 10px; border-width:1px; border-radius:24px; text-align:center; display:flex; flex-direction:column; gap:5px; align-items:center; justify-content:center; box-shadow:0 4px 12px #60277714; }
+        .beauty-level-button .rec-round-icon { font-size:24px; line-height:1; margin:0; }
+        .beauty-level-button span { font-size:14px; line-height:1.4; margin:0; max-width:100%; overflow-wrap:anywhere; }
+        .rec-round-caption { font-size:12px; line-height:1.4; text-align:center; font-weight:600; }
         .rec-round-launcher #display-age-badge { font-size:14px; }
         .quick-care-launcher { text-align:center; margin:12px 0 18px; }
         .learn-care-button { width:80px; height:80px; border-radius:50%; margin:auto auto 10px; display:grid; place-items:center; background:linear-gradient(135deg,#ffdbe9,#dac7ff); border:3px solid white; box-shadow:0 5px 15px #8850a220; font-size:36px; }
@@ -470,7 +470,7 @@
         .quick-care-safety { font-size:14px; padding:12px; line-height:1.7; background:#fff1d5; border-radius:16px; margin-top:12px; }
         .hair-frequency-type .procedure-art { width:96px; height:96px; max-width:96px; float:right; margin:0 0 8px 10px; }
         .hair-frequency-type { display:flow-root; }
-        @media(max-width:640px){.beauty-level-button { margin:0; width:76px; height:76px; min-height:76px; }.rec-round-launcher{width:86px}.quick-care-tile b{font-size:14px}.quick-care-tile .procedure-art{height:125px} }
+        @media(max-width:640px){.beauty-level-button { margin:0; width:100%; height:auto; min-height:72px; padding:10px 8px; border-radius:22px; }.rec-round-launcher{width:104px}.quick-care-tile b{font-size:14px}.quick-care-tile .procedure-art{height:125px} }
         .quick-sun-picture { width:100%; max-width:140px; height:150px; }
 
         .child-tools { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; padding:14px 0; }
