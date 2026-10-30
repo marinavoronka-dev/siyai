@@ -1,18 +1,18 @@
 {
-  "id": "/",
+  "id": "./",
   "name": "Сияй! — бьюти-подружка Мия",
   "short_name": "Сияй!",
   "description": "Твой уголок заботы: привычки, календарь, советы Мии и копилка достижений.",
   "lang": "ru",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#fff1fa",
   "theme_color": "#a13db9",
   "icons": [
     {
-      "src": "/assets/image-7a7b1ace07c669e5.png",
+      "src": "./assets/image-7a7b1ace07c669e5.png",
       "sizes": "1254x1254",
       "type": "image/png",
       "purpose": "any"

@@ -7,8 +7,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Сияй!">
-    <link rel="manifest" href="/manifest.webmanifest">
-    <link rel="apple-touch-icon" href="/assets/image-7a7b1ace07c669e5.png">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="apple-touch-icon" href="./assets/image-7a7b1ace07c669e5.png">
     <title>✨ Сияй! Твой вайб и бьюти-привычки</title>
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="assets/tailwind.css">
@@ -1020,7 +1020,7 @@
                 document.getElementById('mobile-install-button').innerText = 'Приложение добавлено ✓';
             });
             if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
-                navigator.serviceWorker.register('/sw.js').catch(() => {});
+                navigator.serviceWorker.register('./sw.js').catch(() => {});
             }
             if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone) {
                 document.getElementById('mobile-install-button').hidden = true;
