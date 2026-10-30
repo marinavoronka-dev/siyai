@@ -598,6 +598,19 @@
         .author-credit {font-size:15px;color:var(--mia-muted);line-height:1.7;}
         .author-credit strong {display:block;color:var(--mia-ink);font-size:18px;letter-spacing:.03em;}
         @media(max-width:600px){h2{font-size:23px!important;}h3{font-size:20px!important;}.about-picture-grid{grid-template-columns:1fr;}.about-picture-card{display:grid;grid-template-columns:100px minmax(0,1fr);gap:14px;text-align:left;align-items:center;}.about-picture-card h3{margin-top:0;}.calendar-stats{gap:6px;}.calendar-stats>div{padding:10px 5px;}.calendar-stats span{font-size:13px;}.mobile-tabbar button{font-size:12px;} .season-calendar{padding:16px;} }
+        @media(max-width:640px) {
+            #welcome-info-box .welcome-profile-card { padding:16px; gap:12px; text-align:left; }
+            .welcome-profile-card > .w-full { min-width:0; }
+            #welcome-info-box .welcome-profile-heading { display:flex; flex-direction:column; align-items:stretch; gap:12px; }
+            .welcome-profile-heading h1 { min-width:0; overflow-wrap:anywhere; line-height:1.3; }
+            .welcome-profile-heading .rec-round-launcher { width:100%; gap:6px; }
+            .welcome-profile-heading .beauty-level-button { flex-direction:row; gap:10px; min-height:48px; padding:12px 16px; border-radius:18px; touch-action:manipulation; }
+            .welcome-profile-heading .beauty-level-button .rec-round-icon { flex-shrink:0; font-size:22px; }
+            .welcome-profile-heading .beauty-level-button span:last-child { font-size:16px; line-height:1.4; }
+            .welcome-profile-heading .rec-round-caption { font-size:12px; line-height:1.5; }
+            .welcome-profile-heading .rec-round-caption br { display:none; }
+            .welcome-profile-heading .rec-round-caption br::after { content:' '; }
+        }
         @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important;}}
 
         #project-about-modal .about-picture-card {display:block;text-align:left;padding:18px;}
@@ -646,16 +659,16 @@
                 <!-- Приветствие (С Мией) -->
                 <div id="welcome-info-box" class="space-y-4 text-left">
 <div class="welcome-actions"><button type="button" id="onboarding-toggle" class="onboarding-toggle" onclick="toggleOnboardingPanel()" aria-controls="mia-onboarding-panel" aria-expanded="true">⚙️ Настройки и помощь</button><button type="button" id="first-profile-button" class="profile-first-button" onclick="openWelcomeModal()">🌸 Настроить профиль</button></div>
-                    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 bg-white/15 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-white/30 shadow-xl text-center sm:text-left">
+                    <div class="welcome-profile-card flex flex-col sm:flex-row items-center sm:items-start gap-4 bg-white/15 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-white/30 shadow-xl text-center sm:text-left">
                         <div id="display-avatar-container" class="p-2 bg-white/20 backdrop-blur-md rounded-full border-2 border-white/50 shadow-md flex-shrink-0">
                             <span id="display-avatar-img" class="text-5xl sm:text-6xl inline-block bg-white/90 p-2.5 rounded-full shadow">🌸</span>
                         </div>
                         <div class="space-y-2 w-full">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                            <div class="welcome-profile-heading flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                                 <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-tight text-white">
                                     Привет, <span id="display-name" class="text-yellow-300 drop-shadow-sm">Красотка</span>! 💕
                                 </h1>
-                                <div class="rec-round-launcher"><button type="button" class="beauty-level-button" onclick="openAgeRecModal()" aria-haspopup="dialog" aria-controls="age-rec-modal" aria-label="Рекомендации для тебя"><span class="rec-round-icon" aria-hidden="true">✨</span><span>Твой уход</span></button><span class="rec-round-caption">Рекомендации<br>для тебя</span><span id="display-age-badge" hidden></span></div>
+                                <div class="rec-round-launcher"><button type="button" class="beauty-level-button" onclick="openAgeRecModal()" aria-haspopup="dialog" aria-controls="age-rec-modal" aria-label="Рекомендации для тебя"><span class="rec-round-icon" aria-hidden="true">✨</span><span>Твой уход</span></button><span class="rec-round-caption">Рекомендации <br>для тебя</span><span id="display-age-badge" hidden></span></div>
                             </div>
                             <section class="mia-daily-card" aria-labelledby="mia-daily-title"><span class="mia-daily-symbol" aria-hidden="true">💌</span><div><h2 id="mia-daily-title">Напутствие Мии на сегодня</h2><p id="mia-daily-encouragement">Мия готовит для тебя тёплые слова...</p><span class="mia-daily-caption">Новый день — новое доброе напоминание 💜</span></div></section>
                         </div>
